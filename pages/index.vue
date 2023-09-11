@@ -18,7 +18,7 @@ export default {
       <NuxtLink
         to="/projects"
         class="
-          font-general-medium
+          font-roboto-medium
           flex
           items-center
           px-6

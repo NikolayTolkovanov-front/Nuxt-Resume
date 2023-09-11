@@ -13,7 +13,7 @@ export default {
     <!-- About me counters start -->
     <div
       class="
-        font-general-regular
+        font-roboto-regular
         container
         mx-auto
         py-20
@@ -26,7 +26,7 @@ export default {
       <div class="mb-20 sm:mb-0">
         <span
           class="
-            font-general-medium
+            font-roboto-medium
             text-4xl
             font-bold
             text-secondary-dark
@@ -44,7 +44,7 @@ export default {
       <div class="mb-20 sm:mb-0">
         <span
           class="
-            font-general-medium
+            font-roboto-medium
             text-4xl
             font-bold
             text-secondary-dark
@@ -62,7 +62,7 @@ export default {
       <div class="mb-20 sm:mb-0">
         <span
           class="
-            font-general-medium
+            font-roboto-medium
             text-4xl
             font-bold
             text-secondary-dark
@@ -80,7 +80,7 @@ export default {
       <div class="mb-20 sm:mb-0">
         <span
           class="
-            font-general-medium
+            font-roboto-medium
             text-4xl
             font-bold
             text-secondary-dark

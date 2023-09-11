@@ -17,7 +17,7 @@ export default {
   <div class="mt-10 sm:mt-20">
     <p
       class="
-        font-general-medium
+        font-roboto-medium
         text-2xl text-center
         sm:text-3xl
         text-primary-dark

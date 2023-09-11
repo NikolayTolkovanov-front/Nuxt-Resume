@@ -45,7 +45,7 @@ export default {
     <div class="text-center">
       <p
         class="
-          font-general-semibold
+          font-roboto-bold
           text-2xl
           sm:text-5xl
           font-semibold
@@ -66,7 +66,7 @@ export default {
     <div class="mt-8 sm:mt-10">
       <h3
         class="
-          font-general-regular
+          font-roboto-regular
           text-center text-secondary-dark
           dark:text-ternary-light
           text-md
@@ -108,7 +108,7 @@ export default {
           <input
             v-model="searchProject"
             class="
-              font-general-medium
+              font-roboto-medium
               pl-3
               pr-1
               sm:px-4
@@ -163,7 +163,7 @@ export default {
           <div class="text-center px-4 py-6">
             <p
               class="
-                font-general-semibold
+                font-roboto-bold
                 text-xl text-ternary-dark
                 dark:text-ternary-light
                 font-semibold
@@ -174,7 +174,7 @@ export default {
             </p>
             <span
               class="
-                font-general-medium
+                font-roboto-medium
                 text-lg text-ternary-dark
                 dark:text-ternary-light
               "

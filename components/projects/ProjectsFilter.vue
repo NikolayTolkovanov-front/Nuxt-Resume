@@ -24,7 +24,7 @@ export default {
     :name="select"
     :id="select"
     class="
-      font-general-medium
+      font-roboto-medium
       px-4
       py-2
       border-1 border-gray-200

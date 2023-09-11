@@ -9,7 +9,7 @@ export default {
   <div
     :class="isOpen ? 'block' : 'hidden'"
     class="
-      font-general-regular
+      font-roboto-light
       m-0
       sm:ml-4
       mt-5
@@ -79,7 +79,7 @@ export default {
     >
     <div
       class="
-        font-general-regular
+        font-roboto-regular
         border-t-2
         pt-3
         sm:pt-0 sm:border-t-0

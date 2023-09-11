@@ -181,7 +181,7 @@ export default {
         class="hidden sm:flex justify-between items-center flex-col md:flex-row"
       >
         <!-- Hire me button -->
-        <div class="font-general-medium hidden md:block">
+        <div class="font-roboto-medium hidden md:block">
           <button
             class="
               text-md

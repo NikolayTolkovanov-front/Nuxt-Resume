@@ -26,7 +26,7 @@ export default {
         v-for="bio in aboutMe"
         :key="bio.id"
         class="
-          font-general-regular
+          font-roboto-regular
           mb-4
           text-ternary-dark
           dark:text-ternary-light

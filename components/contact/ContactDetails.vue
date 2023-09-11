@@ -15,7 +15,7 @@ export default {
     <div class="text-left max-w-xl px-6">
       <h2
         class="
-          font-general-medium
+          font-roboto-medium
           text-2xl text-primary-dark
           dark:text-primary-light
           mt-8
@@ -24,7 +24,7 @@ export default {
       >
         Contact details
       </h2>
-      <ul class="font-general-regular">
+      <ul class="font-roboto-regular">
         <li class="flex" v-for="contact in contacts" :key="contact.id">
           <i
             :data-feather="contact.icon"

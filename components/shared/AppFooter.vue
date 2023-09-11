@@ -37,7 +37,7 @@ export default {
       <div class="flex flex-col justify-center items-center mb-12 sm:mb-20">
         <p
           class="
-            font-general-semibold
+            font-roboto-bold
             text-3xl
             sm:text-4xl
             text-primary-dark

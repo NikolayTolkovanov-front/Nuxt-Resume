@@ -32,7 +32,7 @@ export default {
     <div class="w-full md:w-1/3 text-left">
       <h1
         class="
-          font-general-semibold
+          font-roboto-bold
           text-3xl
           md:text-3xl
           xl:text-4xl
@@ -47,7 +47,7 @@ export default {
       </h1>
       <p
         class="
-          font-general-medium
+          font-roboto-light
           mt-2
           text-lg
           sm:text-xl
@@ -93,7 +93,7 @@ export default {
             data-feather="arrow-down-circle"
             class="ml-0 sm:ml-1 mr-2 sm:mr-3 w-5 sm:w-6 duration-100"
           ></i>
-          <span class="text-sm sm:text-lg font-general-medium duration-100"
+          <span class="text-sm sm:text-lg font-roboto-medium duration-100"
             >Download CV</span
           ></a
         >

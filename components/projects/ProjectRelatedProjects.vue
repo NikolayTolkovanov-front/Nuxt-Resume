@@ -44,7 +44,7 @@ export default {
   >
     <p
       class="
-        font-general-regular
+        font-roboto-regular
         text-primary-dark
         dark:text-primary-light
         text-3xl

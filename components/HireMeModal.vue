@@ -18,7 +18,7 @@ export default {
 
 <template>
   <transition name="fade">
-    <div v-show="modal" class="font-general-regular fixed inset-0 z-30">
+    <div v-show="modal" class="font-roboto-regular fixed inset-0 z-30">
       <!-- Modal body background as backdrop -->
       <div
         v-show="modal"

@@ -31,7 +31,7 @@ export default {
       <div>
         <p
           class="
-            font-general-medium
+            font-roboto-medium
             text-left text-3xl
             sm:text-4xl
             font-bold
@@ -52,7 +52,7 @@ export default {
             ></i>
             <span
               class="
-                font-general-medium
+                font-roboto-medium
                 ml-2
                 leading-none
                 text-primary-dark
@@ -68,7 +68,7 @@ export default {
             ></i>
             <span
               class="
-                font-general-medium
+                font-roboto-medium
                 ml-2
                 leading-none
                 text-primary-dark
@@ -102,7 +102,7 @@ export default {
           <div class="mb-7">
             <p
               class="
-                font-general-medium
+                font-roboto-medium
                 text-2xl text-secondary-dark
                 dark:text-secondary-light
                 mb-2
@@ -115,7 +115,7 @@ export default {
                 v-for="info in project.companyInfos"
                 :key="info.id"
                 class="
-                  font-general-regular
+                  font-roboto-regular
                   text-ternary-dark
                   dark:text-ternary-light
                 "
@@ -139,7 +139,7 @@ export default {
           <div class="mb-7">
             <p
               class="
-                font-general-medium
+                font-roboto-medium
                 text-2xl text-ternary-dark
                 dark:text-ternary-light
                 mb-2
@@ -149,7 +149,7 @@ export default {
             </p>
             <p
               class="
-                font-general-regular
+                font-roboto-regular
                 text-primary-dark
                 dark:text-ternary-light
               "
@@ -162,7 +162,7 @@ export default {
           <div class="mb-7">
             <p
               class="
-                font-general-medium
+                font-roboto-medium
                 text-2xl text-ternary-dark
                 dark:text-ternary-light
                 mb-2
@@ -172,7 +172,7 @@ export default {
             </p>
             <p
               class="
-                font-general-regular
+                font-roboto-regular
                 text-primary-dark
                 dark:text-ternary-light
               "
@@ -185,7 +185,7 @@ export default {
           <div>
             <p
               class="
-                font-general-medium
+                font-roboto-medium
                 text-2xl text-ternary-dark
                 dark:text-ternary-light
                 mb-2
@@ -224,7 +224,7 @@ export default {
         <div class="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
           <p
             class="
-              font-general-medium
+              font-roboto-medium
               text-primary-dark
               dark:text-primary-light
               text-2xl
@@ -238,7 +238,7 @@ export default {
             v-for="projectDetail in project.projectDetails"
             :key="projectDetail.id"
             class="
-              font-general-regular
+              font-roboto-regular
               mb-5
               text-lg text-ternary-dark
               dark:text-ternary-light
@@ -254,7 +254,7 @@ export default {
     </div>
 
     <!-- Load not found components if no project found -->
-    <div v-else class="font-general-medium container mx-auto text-center">
+    <div v-else class="font-roboto-medium container mx-auto text-center">
       <h1>No projects yet</h1>
     </div>
   </div>

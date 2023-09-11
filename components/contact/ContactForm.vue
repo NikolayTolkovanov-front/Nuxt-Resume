@@ -28,7 +28,7 @@ export default {
     >
       <p
         class="
-          font-general-medium
+          font-roboto-medium
           text-primary-dark
           dark:text-primary-light
           text-2xl
@@ -43,7 +43,7 @@ export default {
             e.preventDefault;
           }
         "
-        class="font-general-regular space-y-7"
+        class="font-roboto-regular space-y-7"
       >
         <div class="">
           <label

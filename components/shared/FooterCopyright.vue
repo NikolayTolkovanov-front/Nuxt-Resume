@@ -1,5 +1,6 @@
 <script>
-import { mapState } from "vuex";
+import { useMainStore } from '~/store'
+import { mapState } from "pinia";
 
 export default {
   data: () => {
@@ -9,7 +10,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["copyrightDate"]),
+    ...mapState(useMainStore, ["copyrightDate"]),
   },
 };
 </script>

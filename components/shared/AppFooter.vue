@@ -1,5 +1,6 @@
 <script>
-import { mapState } from "vuex";
+import { useMainStore } from '~/store'
+import { mapState } from "pinia";
 import feather from "feather-icons";
 import FooterCopyright from "./FooterCopyright.vue";
 export default {
@@ -10,7 +11,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["copyrightDate", "socialProfiles"]),
+    ...mapState(useMainStore, ["copyrightDate", "socialProfiles"]),
   },
   mounted() {
     feather.replace();

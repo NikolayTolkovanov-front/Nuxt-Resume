@@ -1,5 +1,7 @@
 <script>
-import { mapState } from "vuex";
+import { useMainStore } from '~/store'
+import { mapState } from 'pinia';
+
 export default {
   data: () => {
     return {
@@ -7,7 +9,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["clientsHeading", "clients"]),
+    ...mapState(useMainStore, ["clientsHeading", "clients"]),
   },
 };
 </script>

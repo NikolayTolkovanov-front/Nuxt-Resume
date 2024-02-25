@@ -1,5 +1,6 @@
 <script>
-import { mapState } from "vuex";
+import { useMainStore } from '~/store'
+import { mapState } from "pinia";
 import feather from "feather-icons";
 
 export default {
@@ -10,7 +11,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["projectsHeading", "projectsDescription", "projects"]),
+    ...mapState(useMainStore, ["projectsHeading", "projectsDescription", "projects"]),
     filteredProjects() {
       if (this.selectedProject) {
         return this.filterProjectsByCategory();

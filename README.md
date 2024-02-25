@@ -1,109 +1,63 @@
-# Nuxt.js & TailwindCSS Portfolio - With Dark Mode
+# Nuxt 3 Minimal Starter
 
-A simple portfolio starter theme built with Nuxt.js and Tailwind CSS. This is the Nuxt version of the [Vuejs-&-TailwindCSS-Portfolio](https://github.com/realstoman/vuejs-tailwindcss-portfolio)
-
-![Nuxtjs-TailwindCSS-Portfolio](https://user-images.githubusercontent.com/16396664/140901794-14c1db27-99b9-46d4-a954-4bb37c32ead4.JPG)
-
-## Demo URL
-
-[https://nuxtjs-tailwindcss-portfolio.netlify.com](https://nuxtjs-tailwindcss-portfolio.netlify.com)
-
-## Other versions of this project
-
-- Vue.js Version: [https://github.com/realstoman/vuejs-tailwindcss-portfolio](https://github.com/realstoman/vuejs-tailwindcss-portfolio)
-- React Version: [https://github.com/realstoman/react-tailwindcss-portfolio](https://github.com/realstoman/react-tailwindcss-portfolio)
-- Next.js Version: [https://github.com/realstoman/nextjs-tailwindcss-portfolio](https://github.com/realstoman/nextjs-tailwindcss-portfolio)
-
-## Features
-
-- Simple and responsive design
-- [Nuxt.js](https://nuxtjs.org) with [Vuex](https://vuex.vuejs.org/)
-- [Tailwind CSS v2](https://tailwindcss.com)
-- Theme Switcher with Dark Mode
-- Vuex for state management
-- Reusable components
-- Projects filter by category
-- Projects search by title
-- Vue transitions
-- Counter
-- Projects carousel
-- Smooth scroll
-- Dynamic forms
-- Back to top button
-- Download file button
-
-### To Contribute to this project, read the [Contribution Guidlines](https://github.com/realstoman/nuxtjs-tailwindcss-portfolio/blob/main/CONTRIBUTING.md)
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
-1. First of all, make sure you have Node JS installed. If you don't have it:
+Make sure to install the dependencies:
 
-- [Download it from nodejs.org](https://nodejs.org)
-- [Install it using NVM ](https://github.com/nvm-sh/nvm)
-- If you're on Mac, Homebrew is a good option too:
+```bash
+# npm
+npm install
 
-```
-brew install node
-```
+# pnpm
+pnpm install
 
-2. Clone the repo:
-
-```
-git clone https://github.com/realstoman/nuxtjs-tailwindcss-portfolio.git
+# yarn
+yarn install
 ```
 
-3. Open the project folder:
+## Development Server
 
-```
-cd nuxtjs-tailwindcss-portfolio
-```
+Start the development server on `http://localhost:3000`:
 
-4. Install packages and dependencies:
+```bash
+# npm
+npm run dev
 
-```
-yarn
-```
+# pnpm
+pnpm run dev
 
-4. NOTE: If you don't have yarn installed, you can install it globally using npm:
-
-```
-npm install --global yarn
-```
-
-5. Start a local dev server at `http://localhost:3000`:
-
-```
+# yarn
 yarn dev
 ```
 
-## For production build and generating static files:
+## Production
 
-##### Build for production and launch server:
+Build the application for production:
 
-```
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
 yarn build
 ```
 
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
 ```
-yarn start
-```
 
-##### Generate static project:
-
-```
-yarn generate
-```
-
-## Notes
-
-- Always run `yarn install` after pulling new changes
-- I'll be constantly updating this repo as I'll be adding more sections to it, so please always check the projects section of this repo to see what tasks are under todo and in progress
-- Coming Soon [I'll be doing a screencast](https://www.youtube.com/realstoman). Soon I'll be uploading a video to my YouTube channel where I'll be going through the process of creating this portoflio
-- Illustrations from [unDraw](https://undraw.co) and [Freepik](https://freepik.com)
-- Images from [Unsplash](https://unsplash.com)
-- Feel free to use it as your own portfolio
-- Contributions are welcome
-
-### License
-
-[MIT](https://github.com/realstoman/nuxtjs-tailwindcss-portfolio/blob/main/LICENSE)
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

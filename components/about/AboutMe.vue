@@ -1,5 +1,7 @@
 <script>
-import { mapState } from "vuex";
+import { useMainStore } from '~/store'
+import { mapState } from "pinia";
+
 
 export default {
   data: () => {
@@ -8,7 +10,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["aboutMe"]),
+    ...mapState(useMainStore, ["aboutMe"]),
   },
 };
 </script>
@@ -17,7 +19,7 @@ export default {
   <div class="block sm:flex sm:gap-10 mt-10 sm:mt-20">
     <!-- About profile image -->
     <div class="w-full sm:w-1/4 mb-7 sm:mb-0">
-      <img src="~/static/profile.jpeg" class="rounded-lg w-96" alt="" />
+      <img src="~/public/profile.jpeg" class="rounded-lg w-96" alt="" />
     </div>
 
     <!-- About details -->

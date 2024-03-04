@@ -9,23 +9,27 @@ export default defineNuxtConfig({
     },
   },
 
+  app: {
+    pageTransition: { name: 'fade', mode: 'out-in' }
+  },
+
   modules: [
     '@pinia/nuxt',
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
   ],
 
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  },
 
-  tailwindcss: {
-    cssPath: '~/assets/css/tailwind.css',
-    configPath: 'tailwind.config',
-    viewer: false,
-  }
-  // css: ['~/assets/app.css'],
-  // postcss: {
-  //   plugins: {
-  //     tailwindcss: {},
-  //     autoprefixer: {},
-  //   },
-  // },
+  css: ['~/assets/css/tailwind.css', '~/assets/css/main.scss'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 })

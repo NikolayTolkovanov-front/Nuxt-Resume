@@ -1,9 +1,12 @@
 <script>
 import feather from "feather-icons";
 
+definePageMeta({
+  scrollToTop: true,
+})
+
 export default {
   name: "About",
-  scrollToTop: true,
   mounted() {
     feather.replace();
   },

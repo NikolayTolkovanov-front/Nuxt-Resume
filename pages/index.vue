@@ -1,8 +1,12 @@
 <script>
 import AppBanner from "../components/shared/AppBanner.vue";
 import Button from "../components/reusable/Button.vue";
-export default {
+
+definePageMeta({
   scrollToTop: true,
+})
+
+export default {
   components: { AppBanner, Button },
 };
 </script>

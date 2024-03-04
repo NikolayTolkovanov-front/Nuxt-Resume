@@ -3,7 +3,7 @@
  * Powered by: @realstoman
 */
 
-@import './fonts'
+@import './fonts';
 
 @tailwind base;
 @tailwind components;

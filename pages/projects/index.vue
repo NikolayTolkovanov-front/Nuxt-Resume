@@ -1,6 +1,10 @@
 <script>
-export default {
+
+definePageMeta({
   scrollToTop: true,
+})
+
+export default {
   data: () => {
     return {
       // @todo

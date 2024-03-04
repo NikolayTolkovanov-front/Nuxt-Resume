@@ -103,7 +103,7 @@ export default {
     <!-- Banner right illustration -->
     <div class="w-full md:w-2/3 text-right float-right">
       <img
-        v-if="this.$colorMode.value == 'dark'"
+        v-if="$colorMode.value == 'dark'"
         src="~/public/developer-dark.svg"
         alt="Developer Dark"
       />

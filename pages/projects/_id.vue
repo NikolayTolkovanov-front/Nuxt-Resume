@@ -1,8 +1,12 @@
 <script>
 import feather from "feather-icons";
 import ProjectRelatedProjects from "../../components/projects/ProjectRelatedProjects.vue";
-export default {
+
+definePageMeta({
   scrollToTop: true,
+})
+
+export default {
   data: () => {
     return {
       // @todo

@@ -61,7 +61,7 @@ export default {
         <div>
           <NuxtLink to="/">
             <img
-              v-if="this.$colorMode.value == 'dark'"
+              v-if="$colorMode.value == 'dark'"
               src="~/public/logo-light.svg"
               class="w-36"
               alt="Light Logo"
@@ -94,7 +94,7 @@ export default {
         >
           <!-- Dark mode icon -->
           <svg
-            v-if="this.$colorMode.value == 'light'"
+            v-if="$colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
             class="
               text-liText-ternary-dark
@@ -217,7 +217,7 @@ export default {
         >
           <!-- Dark mode icon -->
           <svg
-            v-if="this.$colorMode.value == 'light'"
+            v-if="$colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
             class="
               text-liText-ternary-dark

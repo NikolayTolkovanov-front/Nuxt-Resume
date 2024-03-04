@@ -5,11 +5,7 @@
     <!-- App header -->
     <AppHeader />
 
-    <!-- Render contents with transition -->
-    <transition name="fade" mode="out-in">
-      <Nuxt />
-    </transition>
-
+    <NuxtPage />
     <!-- App footer -->
     <AppFooter />
 

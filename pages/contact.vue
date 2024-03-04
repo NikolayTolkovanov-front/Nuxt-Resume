@@ -1,8 +1,11 @@
 <script>
 import feather from "feather-icons";
 
-export default {
+definePageMeta({
   scrollToTop: true,
+})
+
+export default {
   data: () => {
     return {
       contacts: [

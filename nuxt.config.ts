@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt/config';
+import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
   devtools: {
@@ -10,26 +10,32 @@ export default defineNuxtConfig({
   },
 
   app: {
-    pageTransition: { name: 'fade', mode: 'out-in' }
+    pageTransition: { name: "fade", mode: "out-in" },
   },
 
-  modules: [
-    '@pinia/nuxt',
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/color-mode",
-  ],
+  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
+
+  colorMode: {
+    classSuffix: "",
+    preference: "dark",
+    fallback: "dark",
+  },
 
   router: {
     options: {
-      scrollBehaviorType: 'smooth'
-    }
+      scrollBehaviorType: "smooth",
+    },
   },
 
-  css: ['~/assets/css/tailwind.css', '~/assets/css/main.scss'],
+  css: [
+    "~/assets/css/tailwind.css",
+    "~/assets/css/main.scss",
+    "@fortawesome/fontawesome-svg-core/styles.css",
+  ],
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
-})
+});

@@ -2,9 +2,9 @@
 import feather from "feather-icons";
 import ProjectRelatedProjects from "../../components/projects/ProjectRelatedProjects.vue";
 
-definePageMeta({
-  scrollToTop: true,
-})
+// definePageMeta({
+//   scrollToTop: true,
+// })
 
 export default {
   data: () => {
@@ -14,7 +14,8 @@ export default {
   },
   computed: {
     project() {
-      return this.$store.getters.getProjectById(this.$route.params.id);
+      console.log(this.$store.getProjectById(this.$route.params.id));
+      return this.$store.getProjectById(this.$route.params.id);
     },
   },
   mounted() {

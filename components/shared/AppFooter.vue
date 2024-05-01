@@ -68,7 +68,12 @@ export default {
               duration-500
             "
           >
-            <i :data-feather="social.icon" class="w-6 sm:w-8 h-6 sm:h-8"></i>
+            <font-awesome-icon
+              :icon="['fab', social.icon]"
+              size="2x"
+              class="w-6 sm:w-8 h-6 sm:h-8"
+            />
+            <!-- <i :data-feather="social.icon" class="w-6 sm:w-8 h-6 sm:h-8"></i> -->
           </a>
         </ul>
       </div>
@@ -76,6 +81,7 @@ export default {
       <!-- Footer copyright -->
       <FooterCopyright />
     </div>
+
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <script>
-import { useMainStore } from '~/store'
+import { useMainStore } from "~/store";
 import { mapState } from "pinia";
 import feather from "feather-icons";
 
@@ -11,7 +11,11 @@ export default {
     };
   },
   computed: {
-    ...mapState(useMainStore, ["projectsHeading", "projectsDescription", "projects"]),
+    ...mapState(useMainStore, [
+      "projectsHeading",
+      "projectsDescription",
+      "projects",
+    ]),
     filteredProjects() {
       if (this.selectedProject) {
         return this.filterProjectsByCategory();
@@ -45,15 +49,7 @@ export default {
     <!-- Projects grid header -->
     <div class="text-center">
       <p
-        class="
-          font-roboto-bold
-          text-2xl
-          sm:text-5xl
-          font-semibold
-          mb-2
-          text-ternary-dark
-          dark:text-ternary-light
-        "
+        class="font-roboto-bold text-2xl sm:text-5xl font-semibold mb-2 text-ternary-dark dark:text-ternary-light"
       >
         {{ projectsHeading }}
       </p>
@@ -66,64 +62,25 @@ export default {
     <!-- Filter and search projects -->
     <div class="mt-8 sm:mt-10">
       <h3
-        class="
-          font-roboto-regular
-          text-center text-secondary-dark
-          dark:text-ternary-light
-          text-md
-          sm:text-xl
-          font-normal
-          mb-4
-        "
+        class="font-roboto-regular text-center text-secondary-dark dark:text-ternary-light text-md sm:text-xl font-normal mb-4"
       >
         Search projects by title or filter by category
       </h3>
       <div
-        class="
-          flex
-          justify-between
-          border-b border-primary-light
-          dark:border-secondary-dark
-          pb-3
-          gap-2
-        "
+        class="flex justify-between border-b border-primary-light dark:border-secondary-dark pb-3 gap-2"
       >
         <div class="flex justify-between gap-2">
           <span
-            class="
-              hidden
-              sm:block
-              bg-primary-light
-              dark:bg-ternary-dark
-              p-2.5
-              shadow-sm
-              rounded-xl
-              cursor-pointer
-            "
+            class="hidden sm:block bg-primary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer"
           >
-            <i
-              data-feather="search"
-              class="text-ternary-dark dark:text-ternary-light"
-            ></i>
+            <font-awesome-icon
+              :icon="['fas', 'search']"
+              class="ml-0 sm:ml-1 mr-1 text-black dark:text-white duration-100"
+            />
           </span>
           <input
             v-model="searchProject"
-            class="
-              font-roboto-medium
-              pl-3
-              pr-1
-              sm:px-4
-              py-2
-              border-1 border-gray-200
-              dark:border-secondary-dark
-              rounded-lg
-              text-sm
-              sm:text-md
-              bg-secondary-light
-              dark:bg-ternary-dark
-              text-primary-dark
-              dark:text-ternary-light
-            "
+            class="font-roboto-medium pl-3 pr-1 sm:px-4 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
             id="name"
             name="name"
             type="search"
@@ -141,16 +98,7 @@ export default {
       <div
         v-for="project in filteredProjects"
         :key="project.id"
-        class="
-          rounded-xl
-          shadow-lg
-          hover:shadow-xl
-          cursor-pointer
-          mb-10
-          sm:mb-0
-          bg-secondary-light
-          dark:bg-ternary-dark
-        "
+        class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
         aria-label="Single Project"
       >
         <NuxtLink :to="`/projects/${project.id}`">
@@ -163,22 +111,12 @@ export default {
           </div>
           <div class="text-center px-4 py-6">
             <p
-              class="
-                font-roboto-bold
-                text-xl text-ternary-dark
-                dark:text-ternary-light
-                font-semibold
-                mb-2
-              "
+              class="font-roboto-bold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2"
             >
               {{ project.title }}
             </p>
             <span
-              class="
-                font-roboto-medium
-                text-lg text-ternary-dark
-                dark:text-ternary-light
-              "
+              class="font-roboto-medium text-lg text-ternary-dark dark:text-ternary-light"
               >{{ project.category }}</span
             >
           </div>

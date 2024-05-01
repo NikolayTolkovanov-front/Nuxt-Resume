@@ -1,9 +1,9 @@
 <script>
 import feather from "feather-icons";
 
-definePageMeta({
-  scrollToTop: true,
-})
+// definePageMeta({
+//   scrollToTop: true,
+// })
 
 export default {
   data: () => {

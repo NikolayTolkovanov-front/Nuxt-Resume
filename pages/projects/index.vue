@@ -1,8 +1,8 @@
 <script>
 
-definePageMeta({
-  scrollToTop: true,
-})
+// definePageMeta({
+//   scrollToTop: true,
+// })
 
 export default {
   data: () => {

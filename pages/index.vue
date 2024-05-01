@@ -2,9 +2,9 @@
 import AppBanner from "../components/shared/AppBanner.vue";
 import Button from "../components/reusable/Button.vue";
 
-definePageMeta({
-  scrollToTop: true,
-})
+// definePageMeta({
+//   scrollToTop: true,
+// })
 
 export default {
   components: { AppBanner, Button },
@@ -14,7 +14,6 @@ export default {
 <template>
   <div class="container mx-auto">
     <AppBanner />
-
     <ProjectsGrid />
 
     <!-- View more projects button -->

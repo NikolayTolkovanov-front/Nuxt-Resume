@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style>
+.bg-secondary-light {
+  transition: 0.2s;
+}
 .vue-back-to-top {
   @apply p-2 sm:p-4 bg-indigo-500 hover:bg-indigo-600 text-white;
   border-radius: 50%;

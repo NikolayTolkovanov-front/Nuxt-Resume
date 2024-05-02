@@ -63,7 +63,7 @@ export default {
             <img
               v-if="$colorMode.value == 'dark'"
               src="~/public/logo-light.svg"
-              class="w-36"
+              class="w-30"
               alt="Light Logo"
             />
 
@@ -71,7 +71,7 @@ export default {
               v-else
               src="~/public/logo-dark.svg"
               alt="Color Logo"
-              class="w-36"
+              class="w-30"
             />
           </NuxtLink>
         </div>

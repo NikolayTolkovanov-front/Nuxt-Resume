@@ -1,5 +1,4 @@
 <script>
-import feather from "feather-icons";
 
 // definePageMeta({
 //   scrollToTop: true,
@@ -7,12 +6,6 @@ import feather from "feather-icons";
 
 export default {
   name: "About",
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
-  },
 };
 </script>
 

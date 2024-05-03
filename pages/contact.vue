@@ -1,6 +1,4 @@
 <script>
-import feather from "feather-icons";
-
 // definePageMeta({
 //   scrollToTop: true,
 // })
@@ -8,30 +6,8 @@ import feather from "feather-icons";
 export default {
   data: () => {
     return {
-      contacts: [
-        {
-          id: 1,
-          name: "Your Address, Your City, Your Country",
-          icon: "map-pin",
-        },
-        {
-          id: 2,
-          name: "email@domain.com",
-          icon: "mail",
-        },
-        {
-          id: 3,
-          name: "555 8888 888",
-          icon: "phone",
-        },
-      ],
+
     };
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
   },
 };
 </script>
@@ -49,6 +25,6 @@ export default {
     <ContactForm />
 
     <!-- Contact details -->
-    <ContactDetails :contacts="contacts" />
+    <ContactDetails />
   </div>
 </template>

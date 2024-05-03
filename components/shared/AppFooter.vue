@@ -1,7 +1,6 @@
 <script>
 import { useMainStore } from '~/store'
 import { mapState } from "pinia";
-import feather from "feather-icons";
 import FooterCopyright from "./FooterCopyright.vue";
 export default {
   components: { FooterCopyright },
@@ -12,12 +11,6 @@ export default {
   },
   computed: {
     ...mapState(useMainStore, ["copyrightDate", "socialProfiles"]),
-  },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
   },
 };
 </script>
@@ -73,7 +66,6 @@ export default {
               size="2x"
               class="w-6 sm:w-8 h-6 sm:h-8"
             />
-            <!-- <i :data-feather="social.icon" class="w-6 sm:w-8 h-6 sm:h-8"></i> -->
           </a>
         </ul>
       </div>

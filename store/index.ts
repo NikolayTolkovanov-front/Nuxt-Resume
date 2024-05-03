@@ -764,6 +764,23 @@ export const useMainStore = defineStore('main', {
         name: "Branding & Animations",
       },
     ],
+    contacts: [
+      {
+        id: 1,
+        name: "Your Address, Your City, Your Country",
+        icon: "location-dot",
+      },
+      {
+        id: 2,
+        name: "email@domain.com",
+        icon: "envelope",
+      },
+      {
+        id: 3,
+        name: "555 8888 888",
+        icon: "phone",
+      },
+    ],
   }),
 
   actions: {

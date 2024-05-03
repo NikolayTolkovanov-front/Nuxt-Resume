@@ -1,5 +1,4 @@
 <script>
-import feather from "feather-icons";
 
 export default {
   components: {},
@@ -15,10 +14,6 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.updateScrollPosition);
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.updateScrollPosition);
@@ -41,7 +36,7 @@ export default {
   <!-- Scroll to top -->
   <transition name="fade">
     <div
-      v-show="isScrolled"
+      v-if="isScrolled"
       class="
         transition
         duration-500
@@ -62,7 +57,7 @@ export default {
       "
       @click="backToTop"
     >
-      <i data-feather="chevron-up"></i>
+      <font-awesome-icon :icon="['fas', 'chevron-up']" />
     </div>
   </transition>
 </template>

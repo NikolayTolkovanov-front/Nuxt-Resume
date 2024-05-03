@@ -1,7 +1,6 @@
 <script>
 import { useMainStore } from "~/store";
 import { mapState } from "pinia";
-import feather from "feather-icons";
 
 export default {
   data: () => {
@@ -37,9 +36,6 @@ export default {
       let project = new RegExp(this.searchProject, "i");
       return this.projects.filter((el) => el.title.match(project));
     },
-  },
-  mounted() {
-    feather.replace();
   },
 };
 </script>

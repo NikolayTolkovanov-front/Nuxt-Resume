@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import feather from "feather-icons";
 import AppHeader from "../components/shared/AppHeader.vue";
 import AppFooter from "../components/shared/AppFooter.vue";
 import BackToTop from "../components/BackToTop.vue";
@@ -40,14 +39,16 @@ export default {
       // Todo
     };
   },
-  mounted() {
-    feather.replace();
-  },
+
   components: { AppFooter, BackToTop, AppHeader },
 };
 </script>
 
 <style>
+html {
+  scrollbar-gutter: stable;
+}
+
 .bg-secondary-light {
   transition: 0.2s;
 }

@@ -51,10 +51,10 @@ export default {
         </p>
         <div class="flex">
           <div class="flex items-center mr-10">
-            <i
-              data-feather="clock"
+            <font-awesome-icon
+              :icon="['fas', 'clock']"
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
-            ></i>
+            />
             <span
               class="
                 font-roboto-medium
@@ -67,10 +67,10 @@ export default {
             >
           </div>
           <div class="flex items-center">
-            <i
-              data-feather="tag"
+            <font-awesome-icon
+              :icon="['fas', 'tag']"
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
-            ></i>
+            />
             <span
               class="
                 font-roboto-medium
@@ -216,10 +216,10 @@ export default {
                   shadow-sm
                   duration-500
                 "
-                ><i
-                  :data-feather="social.icon"
+                ><font-awesome
+                  :icon="social.icon"
                   class="w-4 lg:w-5 h-4 lg:h-5"
-                ></i
+                />
               ></a>
             </div>
           </div>

@@ -1,11 +1,16 @@
 <script>
+import { useMainStore } from '~/store'
+import { mapState } from 'pinia';
+
 export default {
-  props: ["contacts"],
   data: () => {
     return {
       // @todo
     };
   },
+  computed: {
+    ...mapState(useMainStore, ["contacts"])
+  }
 };
 </script>
 
@@ -25,16 +30,18 @@ export default {
         Contact details
       </h2>
       <ul class="font-roboto-regular">
-        <li class="flex" v-for="contact in contacts" :key="contact.id">
-          <i
-            :data-feather="contact.icon"
+        <li class="flex items-start" v-for="contact in contacts" :key="contact.id">
+          <span class="flex mt-1.5">
+            <font-awesome-icon
+            :icon="['fas', contact.icon]"
             class="w-5 text-gray-500 dark:text-gray-400 mr-4"
-          ></i>
+            />
+          </span>
           <a
             href="#"
             class="text-lg mb-4 text-ternary-dark dark:text-ternary-light"
             :class="
-              contact.icon === 'mail' || contact.icon === 'phone'
+              contact.icon === 'envelope' || contact.icon === 'phone'
                 ? 'hover:underline cursor-pointer'
                 : ''
             "

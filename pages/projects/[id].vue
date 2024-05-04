@@ -1,5 +1,4 @@
 <script>
-import feather from "feather-icons";
 import ProjectRelatedProjects from "../../components/projects/ProjectRelatedProjects.vue";
 
 // definePageMeta({
@@ -12,17 +11,20 @@ export default {
       // @todo
     };
   },
-  computed: {
-    project() {
-      console.log(this.$store.getProjectById(this.$route.params.id));
-      return this.$store.getProjectById(this.$route.params.id);
+  methods: {
+    getSharedLink(url) {
+      console.log(`${url}${this.$route.fullPath}`);
+      return `${url}${this.$route.fullPath}`
     },
   },
-  mounted() {
-    feather.replace();
-  },
-  updated() {
-    feather.replace();
+  computed: {
+    project() {
+      // console.log(this.$store.getProjectById(this.$route.params.id));
+      return this.$store.getProjectById(this.$route.params.id);
+    },
+    currentURL() {
+      return this.$route.fullPath
+    }
   },
   components: { ProjectRelatedProjects },
 };
@@ -35,17 +37,7 @@ export default {
       <!-- Project heading and meta info -->
       <div>
         <p
-          class="
-            font-roboto-medium
-            text-left text-3xl
-            sm:text-4xl
-            font-bold
-            text-primary-dark
-            dark:text-primary-light
-            mt-14
-            sm:mt-20
-            mb-7
-          "
+          class="font-roboto-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7"
         >
           {{ project.title }}
         </p>
@@ -56,13 +48,7 @@ export default {
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
             />
             <span
-              class="
-                font-roboto-medium
-                ml-2
-                leading-none
-                text-primary-dark
-                dark:text-primary-light
-              "
+              class="font-roboto-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
               >{{ project.publishDate }}</span
             >
           </div>
@@ -72,13 +58,7 @@ export default {
               class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
             />
             <span
-              class="
-                font-roboto-medium
-                ml-2
-                leading-none
-                text-primary-dark
-                dark:text-primary-light
-              "
+              class="font-roboto-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
               >{{ project.tag }}</span
             >
           </div>
@@ -106,12 +86,7 @@ export default {
           <!-- Single project client details -->
           <div class="mb-7">
             <p
-              class="
-                font-roboto-medium
-                text-2xl text-secondary-dark
-                dark:text-secondary-light
-                mb-2
-              "
+              class="font-roboto-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2"
             >
               {{ project.clientTitle }}
             </p>
@@ -119,11 +94,7 @@ export default {
               <li
                 v-for="info in project.companyInfos"
                 :key="info.id"
-                class="
-                  font-roboto-regular
-                  text-ternary-dark
-                  dark:text-ternary-light
-                "
+                class="font-roboto-regular text-ternary-dark dark:text-ternary-light"
               >
                 <span>{{ info.title }}: </span>
                 <a
@@ -143,21 +114,12 @@ export default {
           <!-- Single project objectives -->
           <div class="mb-7">
             <p
-              class="
-                font-roboto-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
               {{ project.objectivesTitle }}
             </p>
             <p
-              class="
-                font-roboto-regular
-                text-primary-dark
-                dark:text-ternary-light
-              "
+              class="font-roboto-regular text-primary-dark dark:text-ternary-light"
             >
               {{ project.objectivesDetails }}
             </p>
@@ -166,21 +128,12 @@ export default {
           <!-- Single project technologies -->
           <div class="mb-7">
             <p
-              class="
-                font-roboto-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
               {{ project.techTitle }}
             </p>
             <p
-              class="
-                font-roboto-regular
-                text-primary-dark
-                dark:text-ternary-light
-              "
+              class="font-roboto-regular text-primary-dark dark:text-ternary-light"
             >
               {{ project.technologies.join(", ") }}
             </p>
@@ -189,12 +142,7 @@ export default {
           <!-- Single project social sharing -->
           <div>
             <p
-              class="
-                font-roboto-medium
-                text-2xl text-ternary-dark
-                dark:text-ternary-light
-                mb-2
-              "
+              class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
               {{ project.socialTitle }}
             </p>
@@ -202,25 +150,16 @@ export default {
               <a
                 v-for="social in project.socialSharings"
                 :key="social.id"
-                :href="social.url"
+                :href="getSharedLink(social.url)"
                 target="__blank"
                 aria-label="Share Project"
-                class="
-                  bg-ternary-light
-                  dark:bg-ternary-dark
-                  text-gray-400
-                  hover:text-primary-dark
-                  dark:hover:text-primary-light
-                  p-2
-                  rounded-lg
-                  shadow-sm
-                  duration-500
-                "
-                ><font-awesome
-                  :icon="social.icon"
-                  class="w-4 lg:w-5 h-4 lg:h-5"
+                class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
+              >
+                <font-awesome-icon
+                  :icon="['fab', social.icon]"
+                  size="2xl"
                 />
-              ></a>
+              </a>
             </div>
           </div>
         </div>
@@ -228,26 +167,14 @@ export default {
         <!-- Single project right section details -->
         <div class="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
           <p
-            class="
-              font-roboto-medium
-              text-primary-dark
-              dark:text-primary-light
-              text-2xl
-              font-bold
-              mb-7
-            "
+            class="font-roboto-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
           >
             {{ project.detailsTitle }}
           </p>
           <p
             v-for="projectDetail in project.projectDetails"
             :key="projectDetail.id"
-            class="
-              font-roboto-regular
-              mb-5
-              text-lg text-ternary-dark
-              dark:text-ternary-light
-            "
+            class="font-roboto-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
           >
             {{ projectDetail.details }}
           </p>

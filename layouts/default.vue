@@ -3,11 +3,11 @@
     class="bg-secondary-light dark:bg-primary-dark min-h-screen flex flex-col"
   >
     <!-- App header -->
-    <AppHeader />
+    <SharedHeader />
 
     <NuxtPage />
     <!-- App footer -->
-    <AppFooter />
+    <SharedFooter />
 
     <!-- Go back to top when scrolled down -->
     <div
@@ -24,24 +24,13 @@
         sm:space-x-4
       "
     >
-      <BackToTop />
+      <SharedBackToTop />
     </div>
   </div>
 </template>
 
-<script>
-import AppHeader from "../components/shared/AppHeader.vue";
-import AppFooter from "../components/shared/AppFooter.vue";
-import BackToTop from "../components/BackToTop.vue";
-export default {
-  data: () => {
-    return {
-      // Todo
-    };
-  },
+<script setup>
 
-  components: { AppFooter, BackToTop, AppHeader },
-};
 </script>
 
 <style>

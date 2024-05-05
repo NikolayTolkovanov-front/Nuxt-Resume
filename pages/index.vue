@@ -1,19 +1,14 @@
-<script>
-import AppBanner from "../components/shared/AppBanner.vue";
-import Button from "../components/reusable/Button.vue";
+<script setup>
 
 // definePageMeta({
 //   scrollToTop: true,
 // })
 
-export default {
-  components: { AppBanner, Button },
-};
 </script>
 
 <template>
   <div class="container mx-auto">
-    <AppBanner />
+    <SharedAppBanner />
     <ProjectsGrid />
 
     <!-- View more projects button -->
@@ -38,7 +33,7 @@ export default {
         "
         aria-label="More Projects"
       >
-        <Button title="More Projects" />
+        <ReusableButton title="More Projects" />
       </NuxtLink>
     </div>
   </div>

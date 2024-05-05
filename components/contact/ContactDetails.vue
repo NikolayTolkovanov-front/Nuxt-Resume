@@ -1,17 +1,8 @@
-<script>
+<script setup>
 import { useMainStore } from '~/store'
-import { mapState } from 'pinia';
 
-export default {
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    ...mapState(useMainStore, ["contacts"])
-  }
-};
+const store = useMainStore()
+
 </script>
 
 <template>
@@ -30,7 +21,7 @@ export default {
         Contact details
       </h2>
       <ul class="font-roboto-regular">
-        <li class="flex items-start" v-for="contact in contacts" :key="contact.id">
+        <li class="flex items-start" v-for="contact in store.contacts" :key="contact.id">
           <span class="flex mt-1.5">
             <font-awesome-icon
             :icon="['fas', contact.icon]"

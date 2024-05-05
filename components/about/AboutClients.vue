@@ -1,17 +1,8 @@
-<script>
+<script setup>
 import { useMainStore } from '~/store'
-import { mapState } from 'pinia';
 
-export default {
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    ...mapState(useMainStore, ["clientsHeading", "clients"]),
-  },
-};
+const store = useMainStore()
+
 </script>
 
 <template>
@@ -26,11 +17,11 @@ export default {
         dark:text-primary-light
       "
     >
-      {{ clientsHeading }}
+      {{ store.clientsHeading }}
     </p>
     <div class="grid grid-cols-2 sm:grid-cols-4 mt-10 sm:mt-14 gap-2">
       <AboutClientSingle
-        v-for="client in clients"
+        v-for="client in store.clients"
         :key="client.id"
         :client="client"
       />

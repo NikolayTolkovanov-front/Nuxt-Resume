@@ -1,18 +1,8 @@
-<script>
+<script setup>
 import { useMainStore } from '~/store'
-import { mapState } from "pinia";
 
+const store = useMainStore()
 
-export default {
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    ...mapState(useMainStore, ["aboutMe"]),
-  },
-};
 </script>
 
 <template>
@@ -25,7 +15,7 @@ export default {
     <!-- About details -->
     <div class="w-full sm:w-3/4 text-left">
       <p
-        v-for="bio in aboutMe"
+        v-for="bio in store.aboutMe"
         :key="bio.id"
         class="
           font-roboto-regular

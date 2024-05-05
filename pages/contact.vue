@@ -1,15 +1,8 @@
-<script>
+<script setup>
 // definePageMeta({
 //   scrollToTop: true,
 // })
 
-export default {
-  data: () => {
-    return {
-
-    };
-  },
-};
 </script>
 
 <template>

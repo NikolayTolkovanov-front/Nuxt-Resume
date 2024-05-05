@@ -1,12 +1,5 @@
-<script>
+<script setup>
 
-export default {
-  data: () => {
-    return {
-      // Todo
-    };
-  },
-};
 </script>
 
 <template>

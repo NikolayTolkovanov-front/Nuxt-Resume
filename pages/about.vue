@@ -1,12 +1,10 @@
-<script>
+<script setup>
 
 // definePageMeta({
 //   scrollToTop: true,
 // })
 
-export default {
-  name: "About",
-};
+
 </script>
 
 <template>

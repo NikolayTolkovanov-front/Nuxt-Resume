@@ -1,45 +1,37 @@
-<script>
-import ProjectRelatedProjects from "../../components/projects/ProjectRelatedProjects.vue";
+<script setup>
+import { storeToRefs } from 'pinia';
+import { useMainStore } from '~/store';
 
+const store = useMainStore()
+const { getProjectById } = storeToRefs(store)
+
+const route = useRoute()
+
+const url = useRequestURL()
+const linkToProject = ref(url.href)
 // definePageMeta({
 //   scrollToTop: true,
 // })
 
-export default {
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  methods: {
-    getSharedLink(url) {
-      console.log(`${url}${this.$route.fullPath}`);
-      return `${url}${this.$route.fullPath}`
-    },
-  },
-  computed: {
-    project() {
-      // console.log(this.$store.getProjectById(this.$route.params.id));
-      return this.$store.getProjectById(this.$route.params.id);
-    },
-    currentURL() {
-      return this.$route.fullPath
-    }
-  },
-  components: { ProjectRelatedProjects },
-};
+function getSharedLink(url) {
+  return `${url}${linkToProject.value}`
+}
+
+const currentProject = computed(() => getProjectById.value(route.params.id))
+const currentURL = computed(() => route.fullPath)
+
 </script>
 
 <template>
   <div class="container mx-auto">
     <!-- Check if there are projects and then load -->
-    <div v-if="project">
+    <div v-if="currentProject">
       <!-- Project heading and meta info -->
       <div>
         <p
           class="font-roboto-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7"
         >
-          {{ project.title }}
+          {{ currentProject.title }}
         </p>
         <div class="flex">
           <div class="flex items-center mr-10">
@@ -49,7 +41,7 @@ export default {
             />
             <span
               class="font-roboto-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-              >{{ project.publishDate }}</span
+              >{{ currentProject.publishDate }}</span
             >
           </div>
           <div class="flex items-center">
@@ -59,7 +51,7 @@ export default {
             />
             <span
               class="font-roboto-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-              >{{ project.tag }}</span
+              >{{ currentProject.tag }}</span
             >
           </div>
         </div>
@@ -69,7 +61,7 @@ export default {
       <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12">
         <div
           class="mb-10 sm:mb-0"
-          v-for="projectImage in project.projectImages"
+          v-for="projectImage in currentProject.projectImages"
           :key="projectImage.id"
         >
           <img
@@ -88,17 +80,17 @@ export default {
             <p
               class="font-roboto-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2"
             >
-              {{ project.clientTitle }}
+              {{ currentProject.clientTitle }}
             </p>
             <ul class="leading-loose">
               <li
-                v-for="info in project.companyInfos"
+                v-for="info in currentProject.companyInfos"
                 :key="info.id"
                 class="font-roboto-regular text-ternary-dark dark:text-ternary-light"
               >
                 <span>{{ info.title }}: </span>
                 <a
-                  href="#"
+                  :href="info.title == 'Phone' ? `tel:${info.details}`: info.details"
                   :class="
                     info.title == 'Website' || info.title == 'Phone'
                       ? 'hover:underline cursor-pointer'
@@ -116,12 +108,12 @@ export default {
             <p
               class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ project.objectivesTitle }}
+              {{ currentProject.objectivesTitle }}
             </p>
             <p
               class="font-roboto-regular text-primary-dark dark:text-ternary-light"
             >
-              {{ project.objectivesDetails }}
+              {{ currentProject.objectivesDetails }}
             </p>
           </div>
 
@@ -130,12 +122,12 @@ export default {
             <p
               class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ project.techTitle }}
+              {{ currentProject.techTitle }}
             </p>
             <p
               class="font-roboto-regular text-primary-dark dark:text-ternary-light"
             >
-              {{ project.technologies.join(", ") }}
+              {{ currentProject.technologies.join(", ") }}
             </p>
           </div>
 
@@ -144,11 +136,11 @@ export default {
             <p
               class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ project.socialTitle }}
+              {{ currentProject.socialTitle }}
             </p>
             <div class="flex items-center gap-3 mt-5">
               <a
-                v-for="social in project.socialSharings"
+                v-for="social in store.socialSharings"
                 :key="social.id"
                 :href="getSharedLink(social.url)"
                 target="__blank"
@@ -169,10 +161,10 @@ export default {
           <p
             class="font-roboto-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
           >
-            {{ project.detailsTitle }}
+            {{ currentProject.detailsTitle }}
           </p>
           <p
-            v-for="projectDetail in project.projectDetails"
+            v-for="projectDetail in currentProject.projectDetails"
             :key="projectDetail.id"
             class="font-roboto-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
           >
@@ -182,7 +174,7 @@ export default {
       </div>
 
       <!-- Project related projects -->
-      <ProjectRelatedProjects />
+      <ProjectsRelated :currentProjectId="currentProject.id" />
     </div>
 
     <!-- Load not found components if no project found -->

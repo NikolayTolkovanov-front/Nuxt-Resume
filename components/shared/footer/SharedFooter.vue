@@ -1,18 +1,9 @@
-<script>
+<script setup>
 import { useMainStore } from '~/store'
 import { mapState } from "pinia";
-import FooterCopyright from "./FooterCopyright.vue";
-export default {
-  components: { FooterCopyright },
-  data: () => {
-    return {
-      // Todo
-    };
-  },
-  computed: {
-    ...mapState(useMainStore, ["copyrightDate", "socialProfiles"]),
-  },
-};
+
+const store = useMainStore()
+
 </script>
 
 <template>
@@ -43,7 +34,7 @@ export default {
         </p>
         <ul class="flex gap-4 sm:gap-8">
           <a
-            v-for="social in socialProfiles"
+            v-for="social in store.socialProfiles"
             :key="social.id"
             :href="social.url"
             target="__blank"
@@ -71,7 +62,7 @@ export default {
       </div>
 
       <!-- Footer copyright -->
-      <FooterCopyright />
+      <SharedFooterCopyright />
     </div>
 
   </div>

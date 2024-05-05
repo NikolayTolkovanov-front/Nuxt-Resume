@@ -1,13 +1,4 @@
-<script>
-import Button from "../reusable/Button.vue";
-export default {
-  components: { Button },
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-};
+<script setup>
 </script>
 
 <template>
@@ -167,7 +158,7 @@ export default {
         </div>
 
         <div class="mt-6">
-          <Button
+          <ReusableButton
             title="Send Message"
             class="
               px-4

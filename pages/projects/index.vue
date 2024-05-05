@@ -1,19 +1,9 @@
-<script>
+<script setup>
 
 // definePageMeta({
 //   scrollToTop: true,
 // })
 
-export default {
-  data: () => {
-    return {
-      // @todo
-    };
-  },
-  computed: {
-    // @todo
-  },
-};
 </script>
 
 <template>

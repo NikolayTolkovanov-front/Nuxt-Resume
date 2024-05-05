@@ -89,27 +89,7 @@ export const useMainStore = defineStore('main', {
             details:
               "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
           },
-        ],
-        socialSharings: [
-          {
-            id: uuidv4(),
-            name: "Telegram",
-            icon: "telegram",
-            url: "https://telegram.me/share/url?url=",
-          },
-          {
-            id: uuidv4(),
-            name: "Vkontakte",
-            icon: "vk",
-            url: "https://vk.com/share.php?url=",
-          },
-          {
-            id: uuidv4(),
-            name: "Facebook",
-            icon: "facebook",
-            url: "https://www.facebook.com/sharer/sharer.php?u=",
-          },
-        ],
+        ]
       },
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdc",
@@ -192,32 +172,6 @@ export const useMainStore = defineStore('main', {
             id: uuidv4(),
             details:
               "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
-          },
-        ],
-        socialSharings: [
-          {
-            id: uuidv4(),
-            name: "Twitter",
-            icon: "twitter",
-            url: "https://twitter.com/realstoman",
-          },
-          {
-            id: uuidv4(),
-            name: "LinkedIn",
-            icon: "linkedin",
-            url: "https://linkedin.com/in/realstoman",
-          },
-          {
-            id: uuidv4(),
-            name: "Facebook",
-            icon: "facebook",
-            url: "https://facebook.com",
-          },
-          {
-            id: uuidv4(),
-            name: "Instagram",
-            icon: "instagram",
-            url: "https://instagram.com",
           },
         ],
       },
@@ -304,32 +258,6 @@ export const useMainStore = defineStore('main', {
               "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
           },
         ],
-        socialSharings: [
-          {
-            id: uuidv4(),
-            name: "Twitter",
-            icon: "twitter",
-            url: "https://twitter.com/realstoman",
-          },
-          {
-            id: uuidv4(),
-            name: "LinkedIn",
-            icon: "linkedin",
-            url: "https://linkedin.com/in/realstoman",
-          },
-          {
-            id: uuidv4(),
-            name: "Facebook",
-            icon: "facebook",
-            url: "https://facebook.com",
-          },
-          {
-            id: uuidv4(),
-            name: "Instagram",
-            icon: "instagram",
-            url: "https://instagram.com",
-          },
-        ],
       },
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8ccc99",
@@ -412,32 +340,6 @@ export const useMainStore = defineStore('main', {
             id: uuidv4(),
             details:
               "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
-          },
-        ],
-        socialSharings: [
-          {
-            id: uuidv4(),
-            name: "Twitter",
-            icon: "twitter",
-            url: "https://twitter.com/realstoman",
-          },
-          {
-            id: uuidv4(),
-            name: "LinkedIn",
-            icon: "linkedin",
-            url: "https://linkedin.com/in/realstoman",
-          },
-          {
-            id: uuidv4(),
-            name: "Facebook",
-            icon: "facebook",
-            url: "https://facebook.com",
-          },
-          {
-            id: uuidv4(),
-            name: "Instagram",
-            icon: "instagram",
-            url: "https://instagram.com",
           },
         ],
       },
@@ -524,32 +426,6 @@ export const useMainStore = defineStore('main', {
               "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
           },
         ],
-        socialSharings: [
-          {
-            id: uuidv4(),
-            name: "Twitter",
-            icon: "twitter",
-            url: "https://twitter.com/realstoman",
-          },
-          {
-            id: uuidv4(),
-            name: "LinkedIn",
-            icon: "linkedin",
-            url: "https://linkedin.com/in/realstoman",
-          },
-          {
-            id: uuidv4(),
-            name: "Facebook",
-            icon: "facebook",
-            url: "https://facebook.com",
-          },
-          {
-            id: uuidv4(),
-            name: "Instagram",
-            icon: "instagram",
-            url: "https://instagram.com",
-          },
-        ],
       },
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccbb",
@@ -634,34 +510,9 @@ export const useMainStore = defineStore('main', {
               "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
           },
         ],
-        socialSharings: [
-          {
-            id: uuidv4(),
-            name: "Twitter",
-            icon: "twitter",
-            url: "https://twitter.com/realstoman",
-          },
-          {
-            id: uuidv4(),
-            name: "LinkedIn",
-            icon: "linkedin",
-            url: "https://linkedin.com/in/realstoman",
-          },
-          {
-            id: uuidv4(),
-            name: "Facebook",
-            icon: "facebook",
-            url: "https://facebook.com",
-          },
-          {
-            id: uuidv4(),
-            name: "Instagram",
-            icon: "instagram",
-            url: "https://instagram.com",
-          },
-        ],
       },
     ],
+    relatedProjectsHeading: "Related Projects",
     clientsHeading: "Some of the brands I worked with",
     clients: [
       {
@@ -734,6 +585,26 @@ export const useMainStore = defineStore('main', {
         name: "VK",
         icon: "vk",
         url: "https://vk.com/ntolkovanov",
+      },
+    ],
+    socialSharings: [
+      {
+        id: uuidv4(),
+        name: "Telegram",
+        icon: "telegram",
+        url: "https://telegram.me/share/url?url=",
+      },
+      {
+        id: uuidv4(),
+        name: "Vkontakte",
+        icon: "vk",
+        url: "https://vk.com/share.php?url=",
+      },
+      {
+        id: uuidv4(),
+        name: "Facebook",
+        icon: "facebook",
+        url: "https://www.facebook.com/sharer/sharer.php?u=",
       },
     ],
     categories: [

@@ -1,59 +1,36 @@
-<script>
-import { useMainStore } from '~/store'
+<script setup>
+import { useMainStore } from "~/store";
 import { mapState } from "pinia";
-import HireMeModal from "../HireMeModal.vue";
-import AppNavigation from "./AppNavigation.vue";
 
-export default {
-  components: {
-    HireMeModal,
-    AppNavigation,
-  },
-  data: () => {
-    return {
-      isOpen: false,
-      modal: false,
-    };
-  },
+const store = useMainStore();
+const colorMode = useColorMode();
 
-  computed: {
-    ...mapState(useMainStore, ["categories"]),
-  },
-  methods: {
-    themeSwitcher() {
-      this.$colorMode.preference =
-        this.$colorMode.value == "light" ? "dark" : "light";
-    },
-    showModal() {
-      if (this.modal) {
-        // Stop screen scrolling
-        document
-          .getElementsByTagName("html")[0]
-          .classList.remove("overflow-y-hidden");
-        this.modal = false;
-      } else {
-        document
-          .getElementsByTagName("html")[0]
-          .classList.add("overflow-y-hidden");
-        this.modal = true;
-      }
-    },
-  },
-};
+const isOpen = ref(false);
+const modal = ref(false);
+
+function themeSwitcher() {
+  colorMode.preference = colorMode.value == "light" ? "dark" : "light";
+}
+
+function showModal() {
+  if (modal.value) {
+    // Stop screen scrolling
+    document
+      .getElementsByTagName("html")[0]
+      .classList.remove("overflow-y-hidden");
+    modal.value = false;
+  } else {
+    document.getElementsByTagName("html")[0].classList.add("overflow-y-hidden");
+    modal.value = true;
+  }
+}
 </script>
 
 <template>
   <nav id="nav" class="sm:container sm:mx-auto">
     <!-- Header -->
     <div
-      class="
-        z-10
-        max-w-screen-lg
-        xl:max-w-screen-xl
-        block
-        sm:flex sm:justify-between sm:items-center
-        py-6
-      "
+      class="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6"
     >
       <!-- Header menu links and small screen hamburger menu -->
       <div class="flex justify-between items-center px-6 sm:px-0">
@@ -79,31 +56,13 @@ export default {
         <!-- Theme switcher small screen -->
         <button
           @click="themeSwitcher"
-          class="
-            sm:hidden
-            ml-8
-            bg-primary-light
-            dark:bg-ternary-dark
-            px-2
-            py-1.5
-            sm:px-3 sm:py-2
-            shadow-sm
-            rounded-xl
-            cursor-pointer
-          "
+          class="sm:hidden ml-8 bg-primary-light dark:bg-ternary-dark px-2 py-1.5 sm:px-3 sm:py-2 shadow-sm rounded-xl cursor-pointer"
         >
           <!-- Dark mode icon -->
           <svg
             v-if="$colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
-            class="
-              text-liText-ternary-dark
-              hover:text-gray-400
-              dark:text-liText-ternary-light
-              dark:hover:text-liBorder-primary-light
-              w-6
-              h-6
-            "
+            class="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -144,14 +103,7 @@ export default {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              class="
-                h-7
-                w-7
-                mt-1
-                fill-current
-                text-secondary-dark
-                dark:text-ternary-light
-              "
+              class="h-7 w-7 mt-1 fill-current text-secondary-dark dark:text-ternary-light"
             >
               <path
                 v-if="isOpen"
@@ -170,11 +122,9 @@ export default {
       </div>
 
       <!-- Header links -->
-      <AppNavigation
+      <SharedHeaderNavigation
         :isOpen="isOpen"
         :showModal="showModal"
-        :modal="modal"
-        :categories="categories"
       />
 
       <!-- Header right section buttons -->
@@ -184,16 +134,7 @@ export default {
         <!-- Hire me button -->
         <div class="font-roboto-medium hidden md:block">
           <button
-            class="
-              text-md
-              bg-indigo-500
-              hover:bg-indigo-600
-              text-white
-              shadow-sm
-              rounded-md
-              px-5
-              py-2.5
-            "
+            class="text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5"
             @click="showModal()"
             aria-label="Hire Me Button"
           >
@@ -204,29 +145,13 @@ export default {
         <!-- Theme switcher large screen -->
         <button
           @click="themeSwitcher"
-          class="
-            sm:ml-6
-            bg-primary-light
-            dark:bg-ternary-dark
-            px-2
-            py-2
-            shadow-sm
-            rounded-lg
-            cursor-pointer
-          "
+          class="sm:ml-6 bg-primary-light dark:bg-ternary-dark px-2 py-2 shadow-sm rounded-lg cursor-pointer"
         >
           <!-- Dark mode icon -->
           <svg
             v-if="$colorMode.value == 'light'"
             xmlns="http://www.w3.org/2000/svg"
-            class="
-              text-liText-ternary-dark
-              hover:text-gray-400
-              dark:text-liText-ternary-light
-              dark:hover:text-liBorder-primary-light
-              w-6
-              h-6
-            "
+            class="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light w-6 h-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -259,10 +184,10 @@ export default {
     </div>
 
     <!-- Hire me modal -->
-    <HireMeModal
+    <SharedHireMeModal
       :showModal="showModal"
       :modal="modal"
-      :categories="categories"
+      :categories="store.categories"
       aria-modal="Hire Me Modal"
     />
   </nav>

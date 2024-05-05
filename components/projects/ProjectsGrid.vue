@@ -1,43 +1,46 @@
-<script>
+<script setup>
 import { useMainStore } from "~/store";
 import { mapState } from "pinia";
 
-export default {
-  data: () => {
-    return {
-      selectedProject: "",
-      searchProject: "",
-    };
+const store = useMainStore();
+
+const filters = reactive({
+  selectedProject: {
+    str: "",
+    cb: filterProjectsByCategory
   },
-  computed: {
-    ...mapState(useMainStore, [
-      "projectsHeading",
-      "projectsDescription",
-      "projects",
-    ]),
-    filteredProjects() {
-      if (this.selectedProject) {
-        return this.filterProjectsByCategory();
-      } else if (this.searchProject) {
-        return this.filterProjectsBySearch();
-      }
-      return this.projects;
-    },
-  },
-  methods: {
-    filterProjectsByCategory() {
-      return this.projects.filter((item) => {
-        let category =
-          item.category.charAt(0).toUpperCase() + item.category.slice(1);
-        return category.includes(this.selectedProject);
-      });
-    },
-    filterProjectsBySearch() {
-      let project = new RegExp(this.searchProject, "i");
-      return this.projects.filter((el) => el.title.match(project));
-    },
-  },
-};
+  searchProject: {
+    str: "",
+    cb: filterProjectsBySearch
+  }
+})
+
+function filterProjectsByCategory(projects) {
+  return projects.filter((item) => {
+    let category =
+      item.category.charAt(0).toUpperCase() + item.category.slice(1);
+    return category.includes(filters.selectedProject.str);
+  });
+}
+
+function filterProjectsBySearch(projects) {
+  let project = new RegExp(filters.searchProject.str, "i");
+  console.log("project", project);
+  return projects.filter((el) => el.title.match(project));
+}
+
+const filteredProjects = computed(() => {
+  let projectsToFilter = store.projects
+
+  for (let filter in filters) {
+    if (filters[filter].str) {
+      projectsToFilter = filters[filter].cb(projectsToFilter)
+    }
+  }
+
+  return projectsToFilter
+})
+
 </script>
 
 <template>
@@ -47,11 +50,11 @@ export default {
       <p
         class="font-roboto-bold text-2xl sm:text-5xl font-semibold mb-2 text-ternary-dark dark:text-ternary-light"
       >
-        {{ projectsHeading }}
+        {{ store.projectsHeading }}
       </p>
       <!-- Note: This description is commented out, but if you want to see it, just uncomment this -->
       <!-- <p class="text-lg sm:text-xl text-gray-500 dark:text-ternary-light">
-        {{ projectsDescription }}
+        {{ store.projectsDescription }}
       </p> -->
     </div>
 
@@ -75,7 +78,7 @@ export default {
             />
           </span>
           <input
-            v-model="searchProject"
+            v-model="filters.searchProject.str"
             class="font-roboto-medium pl-3 pr-1 sm:px-4 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
             id="name"
             name="name"
@@ -85,7 +88,10 @@ export default {
             aria-label="Name"
           />
         </div>
-        <ProjectsFilter @change="selectedProject = $event" />
+        <ProjectsFilter
+          :select="filters.searchProject.str"
+          @change="filters.selectedProject.str = $event"
+        />
       </div>
     </div>
 

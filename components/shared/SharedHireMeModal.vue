@@ -1,15 +1,15 @@
-<script>
-import Button from "./reusable/Button.vue";
-export default {
-  props: ["showModal", "modal", "categories"],
-  components: { Button },
-  data: () => {
-    return {
-      // @todo
-    };
+<script setup>
+defineProps({
+  showModal: {
+    type: Function,
   },
-  methods: {},
-};
+  modal: {
+    type: Boolean,
+  },
+  categories: {
+    type: Array,
+  },
+});
 </script>
 
 <template>
@@ -19,46 +19,17 @@ export default {
       <div
         v-show="modal"
         @click="showModal()"
-        class="
-          bg-filter bg-black bg-opacity-50
-          fixed
-          inset-0
-          w-full
-          h-full
-          z-20
-        "
+        class="bg-filter bg-black bg-opacity-50 fixed inset-0 w-full h-full z-20"
       ></div>
       <!-- Modal contents -->
       <main class="flex flex-col items-center justify-center h-full w-full">
         <transition name="fade-up-down">
           <div v-show="modal" class="modal-wrapper flex items-center z-30">
             <div
-              class="
-                modal
-                max-w-md
-                mx-5
-                xl:max-w-xl
-                lg:max-w-xl
-                md:max-w-xl
-                bg-secondary-light
-                dark:bg-primary-dark
-                max-h-screen
-                shadow-lg
-                flex-row
-                rounded-lg
-                relative
-              "
+              class="modal max-w-md mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark max-h-screen shadow-lg flex-row rounded-lg relative"
             >
               <div
-                class="
-                  modal-header
-                  flex
-                  justify-between
-                  gap-10
-                  p-5
-                  border-b border-ternary-light
-                  dark:border-ternary-dark
-                "
+                class="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light dark:border-ternary-dark"
               >
                 <h5 class="text-primary-dark dark:text-primary-light text-xl">
                   What project are you looking for?
@@ -67,7 +38,10 @@ export default {
                   class="px-4 flex items-center text-primary-dark dark:text-primary-light"
                   @click="showModal()"
                 >
-                  <font-awesome-icon :icon="['fas', 'xmark']" class="w-8 sm:w-12" />
+                  <font-awesome-icon
+                    :icon="['fas', 'xmark']"
+                    class="w-8 sm:w-12"
+                  />
                 </button>
               </div>
               <div class="modal-body p-5 w-full h-full">
@@ -81,19 +55,7 @@ export default {
                 >
                   <div class="mt-0">
                     <input
-                      class="
-                        w-full
-                        px-5
-                        py-2
-                        border-1 border-gray-200
-                        dark:border-secondary-dark
-                        rounded-md
-                        text-md
-                        bg-secondary-light
-                        dark:bg-ternary-dark
-                        text-primary-dark
-                        dark:text-ternary-light
-                      "
+                      class="w-full px-5 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
                       id="name"
                       name="name"
                       type="text"
@@ -104,19 +66,7 @@ export default {
                   </div>
                   <div class="mt-6">
                     <input
-                      class="
-                        w-full
-                        px-5
-                        py-2
-                        border-1 border-gray-200
-                        dark:border-secondary-dark
-                        rounded-md
-                        text-md
-                        bg-secondary-light
-                        dark:bg-ternary-dark
-                        text-primary-dark
-                        dark:text-ternary-light
-                      "
+                      class="w-full px-5 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
                       id="email"
                       name="email"
                       type="text"
@@ -127,19 +77,7 @@ export default {
                   </div>
                   <div class="mt-6">
                     <select
-                      class="
-                        w-full
-                        px-5
-                        py-2
-                        border-1 border-gray-200
-                        dark:border-secondary-dark
-                        rounded-md
-                        text-md
-                        bg-secondary-light
-                        dark:bg-ternary-dark
-                        text-primary-dark
-                        dark:text-ternary-light
-                      "
+                      class="w-full px-5 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
                       id="subject"
                       name="subject"
                       type="text"
@@ -158,19 +96,7 @@ export default {
 
                   <div class="mt-6">
                     <textarea
-                      class="
-                        w-full
-                        px-5
-                        py-2
-                        border-1 border-gray-200
-                        dark:border-secondary-dark
-                        rounded-md
-                        text-md
-                        bg-secondary-light
-                        dark:bg-ternary-dark
-                        text-primary-dark
-                        dark:text-ternary-light
-                      "
+                      class="w-full px-5 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-md text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
                       id="message"
                       name="message"
                       cols="14"
@@ -181,20 +107,9 @@ export default {
                   </div>
 
                   <div class="mt-6 pb-4 sm:pb-1">
-                    <Button
+                    <ReusableButton
                       title="Send Request"
-                      class="
-                        px-4
-                        sm:px-6
-                        py-2
-                        sm:py-2.5
-                        text-white
-                        bg-indigo-500
-                        hover:bg-indigo-600
-                        rounded-md
-                        focus:ring-1 focus:ring-indigo-900
-                        duration-500
-                      "
+                      class="px-4 sm:px-6 py-2 sm:py-2.5 text-white bg-indigo-500 hover:bg-indigo-600 rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
                       type="submit"
                       aria-label="Submit Request"
                     />
@@ -204,22 +119,9 @@ export default {
               <div
                 class="modal-footer mt-2 sm:mt-0 py-5 px-8 border0-t text-right"
               >
-                <Button
+                <ReusableButton
                   title="Close"
-                  class="
-                    px-4
-                    sm:px-6
-                    py-2
-                    bg-gray-600
-                    text-primary-light
-                    hover:bg-ternary-dark
-                    dark:bg-gray-200
-                    dark:text-secondary-dark
-                    dark:hover:bg-primary-light
-                    rounded-md
-                    focus:ring-1 focus:ring-indigo-900
-                    duration-500
-                  "
+                  class="px-4 sm:px-6 py-2 bg-gray-600 text-primary-light hover:bg-ternary-dark dark:bg-gray-200 dark:text-secondary-dark dark:hover:bg-primary-light rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
                   @click="showModal()"
                   aria-label="Close Hire Me Modal"
                 />

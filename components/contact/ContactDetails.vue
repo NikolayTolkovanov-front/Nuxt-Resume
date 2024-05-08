@@ -38,7 +38,7 @@ const store = useMainStore()
             "
             aria-label="Website and Phone"
           >
-            {{ contact.name }}
+            {{ contact.data }}
           </a>
         </li>
       </ul>

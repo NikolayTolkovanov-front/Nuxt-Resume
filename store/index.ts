@@ -632,20 +632,25 @@ export const useMainStore = defineStore('main', {
     contacts: [
       {
         id: 1,
-        name: "Your Address, Your City, Your Country",
+        name: "address",
+        data: "Your Address, Your City, Your Country",
         icon: "location-dot",
       },
       {
         id: 2,
-        name: "email@domain.com",
+        name: "email",
+        data: "email@domain.com",
         icon: "envelope",
       },
       {
         id: 3,
-        name: "555 8888 888",
+        name: "phone",
+        data: "555 8888 888",
         icon: "phone",
       },
     ],
+    successMessage: "Ваша заявка успешно отправлена, с вами свяжутся через некоторое время",
+    failMessage: "К сожалению, ваша заявка не была отправлена, попробуйте через несколько минут или свяжитесь по номеру:",
   }),
 
   actions: {

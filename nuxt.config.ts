@@ -15,6 +15,8 @@ export default defineNuxtConfig({
 
   modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
 
+  plugins: ["~/plugins/maska"],
+
   colorMode: {
     classSuffix: "",
     preference: "dark",

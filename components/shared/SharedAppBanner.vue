@@ -1,5 +1,6 @@
 <script setup>
-
+const colorMode = useColorMode();
+const currentColor = computed(() => colorMode.value)
 </script>
 
 <template>
@@ -41,7 +42,7 @@
     <!-- Banner right illustration -->
     <div class="w-full md:w-2/3 text-right float-right">
       <img
-        v-if="$colorMode.value == 'dark'"
+        v-if="currentColor === 'dark'"
         src="~/public/developer-dark.svg"
         alt="Developer Dark"
       />

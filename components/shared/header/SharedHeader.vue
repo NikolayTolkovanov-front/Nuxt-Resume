@@ -187,8 +187,6 @@ function showModal() {
     <SharedHireMeModal
       :showModal="showModal"
       :modal="modal"
-      :categories="store.categories"
-      aria-modal="Hire Me Modal"
     />
   </nav>
 </template>

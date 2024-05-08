@@ -1,7 +1,7 @@
 <script setup>
 const userScrollPosition = ref(0);
 
-const isScrolled = computed(() => userScrollPosition.value > 100);
+const isScrolled = computed(() => userScrollPosition.value > 300);
 
 function updateScrollPosition() {
   userScrollPosition.value = window.scrollY;

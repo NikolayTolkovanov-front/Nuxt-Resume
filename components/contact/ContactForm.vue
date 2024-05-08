@@ -208,7 +208,7 @@ async function addUserInfo(event) {
             title="Send Message"
             :disabled="isDisabledButton"
             :class="{
-              'disabled:opacity-75 bg-indigo-300':
+              'opacity-50':
                 v$.$errors.length || isDisabledButton,
               'hover:bg-indigo-600': !v$.$errors.length && !isDisabledButton,
             }"

@@ -27,10 +27,7 @@ const currentColor = computed(() => colorMode.value)
           aria-label="Download Resume"
         >
           <span>
-            <font-awesome-icon
-              :icon="['fas', 'download']"
-              class="ml-0 sm:ml-1 mr-2 sm:mr-3 w-5 sm:w-6 duration-100"
-            />
+            <Icon name="fa6-solid:download" class="ml-0 sm:ml-1 mr-2 sm:mr-3 w-5 sm:w-6 duration-100" />
           </span>
           <p class="text-sm sm:text-lg font-roboto-medium duration-100">
             Download CV

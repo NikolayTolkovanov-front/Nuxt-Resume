@@ -52,11 +52,7 @@ const store = useMainStore()
               duration-500
             "
           >
-            <font-awesome-icon
-              :icon="['fab', social.icon]"
-              size="2x"
-              class="w-6 sm:w-8 h-6 sm:h-8"
-            />
+            <Icon :name="social.icon" size="30" />
           </a>
         </ul>
       </div>

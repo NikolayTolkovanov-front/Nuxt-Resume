@@ -23,10 +23,7 @@ const store = useMainStore()
       <ul class="font-roboto-regular">
         <li class="flex items-start" v-for="contact in store.contacts" :key="contact.id">
           <span class="flex mt-1.5">
-            <font-awesome-icon
-            :icon="['fas', contact.icon]"
-            class="w-5 text-gray-500 dark:text-gray-400 mr-4"
-            />
+            <Icon :name="contact.icon" size="20" class="text-gray-500 dark:text-gray-400 mr-4" />
           </span>
           <a
             href="#"

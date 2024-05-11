@@ -27,7 +27,7 @@ onBeforeUnmount(() => window.removeEventListener("scroll", updateScrollPosition)
       class="transition duration-500 transform hover:scale-110 rounded-full cursor-pointer flex p-2 bg-indigo-500 hover:bg-indigo-600 text-white items-center hover:shadow-sm border-none ring-none outline-none"
       @click="backToTop"
     >
-      <font-awesome-icon :icon="['fas', 'chevron-up']" size="xl" />
+      <Icon name="fa6-solid:chevron-up" />
     </div>
   </transition>
 </template>

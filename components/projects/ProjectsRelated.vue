@@ -3,7 +3,7 @@ import { useMainStore } from "~/store";
 
 const props = defineProps({
   currentProjectId: {
-    type: Number,
+    type: String,
   },
 });
 

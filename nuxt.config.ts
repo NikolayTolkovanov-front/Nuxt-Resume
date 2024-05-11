@@ -13,7 +13,12 @@ export default defineNuxtConfig({
     pageTransition: { name: "fade", mode: "out-in" },
   },
 
-  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
+  modules: [
+    "@pinia/nuxt",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
+    "nuxt-icon",
+  ],
 
   plugins: ["~/plugins/maska"],
 
@@ -32,7 +37,6 @@ export default defineNuxtConfig({
   css: [
     "~/assets/css/tailwind.css",
     "~/assets/css/main.scss",
-    "@fortawesome/fontawesome-svg-core/styles.css",
   ],
   postcss: {
     plugins: {

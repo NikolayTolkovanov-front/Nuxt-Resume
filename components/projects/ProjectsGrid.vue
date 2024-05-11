@@ -72,10 +72,7 @@ const filteredProjects = computed(() => {
           <span
             class="hidden sm:block bg-primary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer"
           >
-            <font-awesome-icon
-              :icon="['fas', 'search']"
-              class="ml-0 sm:ml-1 mr-1 text-black dark:text-white duration-100"
-            />
+            <Icon name="fa-solid:search" class="ml-0 sm:ml-1 mr-1 text-black dark:text-white duration-100" />
           </span>
           <input
             v-model="filters.searchProject.str"
@@ -97,6 +94,7 @@ const filteredProjects = computed(() => {
 
     <!-- Projects grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
+      <p v-if="!filteredProjects.length" class="font-roboto-bold text-xl text-ternary-dark dark:text-ternary-light font-semibold">No projects</p>
       <div
         v-for="project in filteredProjects"
         :key="project.id"

@@ -88,7 +88,7 @@ function closeModal() {
             class="modal-wrapper flex items-center w-full sm:w-max z-30"
           >
             <div
-              class="modal overflow-auto max-w-full mx-0 sm:mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark max-h-screen shadow-lg flex-row sm:rounded-lg relative"
+              class="modal overflow-auto w-full max-w-full mx-0 sm:mx-5 xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark max-h-screen shadow-lg flex-row sm:rounded-lg relative"
             >
               <div
                 class="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light dark:border-ternary-dark"
@@ -100,10 +100,7 @@ function closeModal() {
                   class="px-4 flex items-center text-primary-dark dark:text-primary-light"
                   @click="showModal()"
                 >
-                  <font-awesome-icon
-                    :icon="['fas', 'xmark']"
-                    class="w-8 sm:w-12"
-                  />
+                <Icon name="fa6-solid:xmark" size="20" />
                 </button>
               </div>
               <div class="modal-body p-5 w-full h-full">
@@ -281,7 +278,7 @@ function closeModal() {
                   </div>
                 </form>
               </div>
-              <div
+              <!-- <div
                 class="modal-footer mt-2 sm:mt-0 py-5 px-8 border0-t text-right"
               >
                 <ReusableButton
@@ -290,7 +287,7 @@ function closeModal() {
                   @click="closeModal()"
                   aria-label="Close Hire Me Modal"
                 />
-              </div>
+              </div> -->
             </div>
           </div>
         </transition>

@@ -35,20 +35,14 @@ const currentURL = computed(() => route.fullPath)
         </p>
         <div class="flex">
           <div class="flex items-center mr-10">
-            <font-awesome-icon
-              :icon="['fas', 'clock']"
-              class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
-            />
+            <Icon name="fa6-solid:clock" class="w-4 h-4 text-ternary-dark dark:text-ternary-light" />
             <span
               class="font-roboto-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
               >{{ currentProject.publishDate }}</span
             >
           </div>
           <div class="flex items-center">
-            <font-awesome-icon
-              :icon="['fas', 'tag']"
-              class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
-            />
+            <Icon name="fa6-solid:tag" class="w-4 h-4 text-ternary-dark dark:text-ternary-light" />
             <span
               class="font-roboto-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
               >{{ currentProject.tag }}</span
@@ -147,10 +141,7 @@ const currentURL = computed(() => route.fullPath)
                 aria-label="Share Project"
                 class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
               >
-                <font-awesome-icon
-                  :icon="['fab', social.icon]"
-                  size="2xl"
-                />
+                <Icon :name="social.icon" size="30" />
               </a>
             </div>
           </div>

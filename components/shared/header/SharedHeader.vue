@@ -13,13 +13,19 @@ function themeSwitcher() {
 }
 
 function showModal() {
+  const layoutDefault = document.querySelector('.layout-default')
+
   if (modal.value) {
     // Stop screen scrolling
+    layoutDefault.style.paddingRight = "0px"
     document
       .getElementsByTagName("html")[0]
       .classList.remove("overflow-y-hidden");
     modal.value = false;
   } else {
+    const lockPaddingValue = window.innerWidth - layoutDefault.offsetWidth + 'px'
+    layoutDefault.style.paddingRight = lockPaddingValue
+
     document.getElementsByTagName("html")[0].classList.add("overflow-y-hidden");
     modal.value = true;
   }
@@ -38,17 +44,9 @@ function showModal() {
         <div>
           <NuxtLink to="/">
             <img
-              v-if="$colorMode.value == 'dark'"
               src="~/public/logo-light.svg"
               class="w-30"
               alt="Light Logo"
-            />
-
-            <img
-              v-else
-              src="~/public/logo-dark.svg"
-              alt="Color Logo"
-              class="w-30"
             />
           </NuxtLink>
         </div>
@@ -60,7 +58,7 @@ function showModal() {
         >
           <!-- Dark mode icon -->
           <svg
-            v-if="$colorMode.value == 'light'"
+            v-if="colorMode['value'] == 'light'"
             xmlns="http://www.w3.org/2000/svg"
             class="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light w-6 h-6"
             fill="none"
@@ -76,7 +74,7 @@ function showModal() {
           </svg>
           <!-- Light mode icon -->
           <svg
-            v-else
+            v-if="colorMode['value'] == 'dark'"
             xmlns="http://www.w3.org/2000/svg"
             class="text-gray-200 hover:text-gray-50 w-6 h-6"
             fill="none"
@@ -165,7 +163,7 @@ function showModal() {
           </svg>
           <!-- Light mode icon -->
           <svg
-            v-else
+          v-if="$colorMode.value == 'dark'"
             xmlns="http://www.w3.org/2000/svg"
             class="text-gray-200 hover:text-gray-50 w-6 h-6"
             fill="none"

@@ -1,6 +1,9 @@
 <script setup>
+
 const colorMode = useColorMode();
-const currentColor = computed(() => colorMode.value)
+const currentColor = computed(() =>  colorMode.value);
+
+onMounted(() => {});
 </script>
 
 <template>
@@ -27,7 +30,10 @@ const currentColor = computed(() => colorMode.value)
           aria-label="Download Resume"
         >
           <span>
-            <Icon name="fa6-solid:download" class="ml-0 sm:ml-1 mr-2 sm:mr-3 w-5 sm:w-6 duration-100" />
+            <Icon
+              name="fa6-solid:download"
+              class="ml-0 sm:ml-1 mr-2 sm:mr-3 w-5 sm:w-6 duration-100"
+            />
           </span>
           <p class="text-sm sm:text-lg font-roboto-medium duration-100">
             Download CV
@@ -39,11 +45,15 @@ const currentColor = computed(() => colorMode.value)
     <!-- Banner right illustration -->
     <div class="w-full md:w-2/3 text-right float-right">
       <img
-        v-if="currentColor === 'dark'"
+        v-show="currentColor === 'dark'"
         src="~/public/developer-dark.svg"
         alt="Developer Dark"
       />
-      <img v-else src="~/public/developer.svg" alt="Developer Light" />
+      <img
+        v-show="currentColor === 'light'"
+        src="~/public/developer.svg"
+        alt="Developer Light"
+      />
     </div>
   </section>
 </template>

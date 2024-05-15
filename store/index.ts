@@ -1,8 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
-import { defineStore } from "pinia"
+import { defineStore } from "pinia";
 
-
-export const useMainStore = defineStore('main', {
+export const useMainStore = defineStore("main", {
   state: () => ({
     projectsHeading: "Projects Portfolio",
     projectsDescription: "Some of the projects I have successfully completed",
@@ -89,7 +88,7 @@ export const useMainStore = defineStore('main', {
             details:
               "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
           },
-        ]
+        ],
       },
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdc",
@@ -512,6 +511,28 @@ export const useMainStore = defineStore('main', {
         ],
       },
     ],
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Python",
+      "PHP",
+      "Vue.js",
+      "Vuex",
+      "Pinia",
+      "React.js",
+      "Redux",
+      "jQuery",
+      "Sphinx",
+      "Node.js",
+      "Express.js",
+      "Wordpress",
+      "Tailwind.css",
+      "Bootstrap.css",
+      "Docker",
+      "Jenkins",
+      "MySQL",
+    ],
     relatedProjectsHeading: "Related Projects",
     clientsHeading: "Some of the brands I worked with",
     clients: [
@@ -649,17 +670,17 @@ export const useMainStore = defineStore('main', {
         icon: "fa6-solid:phone",
       },
     ],
-    successMessage: "Ваша заявка успешно отправлена, с вами свяжутся через некоторое время",
-    failMessage: "К сожалению, ваша заявка не была отправлена, попробуйте через несколько минут или свяжитесь по номеру:",
+    successMessage:
+      "Ваша заявка успешно отправлена, с вами свяжутся через некоторое время",
+    failMessage:
+      "К сожалению, ваша заявка не была отправлена, попробуйте через несколько минут или свяжитесь по номеру:",
   }),
 
-  actions: {
-
-  },
+  actions: {},
 
   getters: {
     getProjectById: (state) => (id) => {
       return state.projects.find((project) => project.id == id);
     },
-  }
-})
+  },
+});

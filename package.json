@@ -16,6 +16,7 @@
     "maska": "^2.1.11",
     "nuxt-icon": "^0.6.10",
     "pinia": "^2.1.6",
+    "TagCloud": "^2.5.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

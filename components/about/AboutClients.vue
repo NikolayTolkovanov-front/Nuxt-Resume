@@ -1,30 +1,75 @@
 <script setup>
-import { useMainStore } from '~/store'
+import { useMainStore } from "~/store";
+import TagCloud from "TagCloud";
 
-const store = useMainStore()
+const store = useMainStore();
 
+onMounted(() => {
+  const tagCloudContainer = ".about-clients";
+  const tagCloudTexts = store.technologies;
+  let tagCloudRadius = document.body.clientWidth >= 600 ? 300 : 160
+  // const tagCloudRadius = computed(() => {
+  //   console.log('document.body.clientWidth', document.body.clientWidth);
+  //   return document.body.clientWidth > 640 ? 300 : 150
+  // });
+  let tagCloudOptions = {
+    radius: tagCloudRadius,
+    itemClass:
+      "transition-colors transition-duration-500 text-primary-dark hover:text-indigo-500 dark:text-primary-light dark:hover:text-indigo-500",
+  };
+
+  let tagcloud = new TagCloud(
+    tagCloudContainer,
+    tagCloudTexts,
+    tagCloudOptions
+  );
+
+  window.addEventListener("resize", () => {
+    tagCloudRadius = document.body.clientWidth >= 600 ? 300 : 160
+    console.log("resize");
+    console.log("tagCloudOptions", tagCloudOptions);
+    console.log("tagCloudRadius", tagCloudRadius);
+    tagcloud.destroy();
+    tagCloudOptions.radius = tagCloudRadius
+    tagcloud = new TagCloud(tagCloudContainer, tagCloudTexts, tagCloudOptions);
+  });
+});
 </script>
 
 <template>
   <!-- About clients section -->
-  <div class="mt-10 sm:mt-20">
+  <div class="mt-20 xl:mt-0">
     <p
-      class="
-        font-roboto-medium
-        text-2xl text-center
-        sm:text-3xl
-        text-primary-dark
-        dark:text-primary-light
-      "
+      class="font-roboto-medium text-2xl text-center sm:text-3xl text-primary-dark dark:text-primary-light"
     >
       {{ store.clientsHeading }}
     </p>
-    <div class="grid grid-cols-2 sm:grid-cols-4 mt-10 sm:mt-14 gap-2">
+    <!-- <div class="grid grid-cols-2 sm:grid-cols-4 mt-10 sm:mt-14 gap-2">
       <AboutClientSingle
         v-for="client in store.clients"
         :key="client.id"
         :client="client"
       />
-    </div>
+    </div> -->
+    <div class="about-clients"></div>
   </div>
 </template>
+<style lang="scss">
+.tagcloud {
+  &--item {
+    transition: color 0.3s;
+
+    &:nth-child(even) {
+      color: white;
+    }
+
+    &:nth-child(odd) {
+      color: #f7f8fc;
+    }
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+</style>

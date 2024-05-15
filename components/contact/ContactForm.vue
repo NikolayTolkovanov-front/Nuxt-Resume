@@ -7,14 +7,15 @@ const messageStatus = ref(false);
 const isDisabledButton = ref(false);
 
 const forms = reactive({
-  userName: "",
-  userEmail: "",
-  userPhone: "",
-  userMessage: "",
+  userName: "Nicfffk",
+  userEmail: "tnrvlg@gmail.com",
+  userPhone: "+7 (896) 166-54-41",
+  userMessage:
+    "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
 });
 
 const rules = {
-  userName: { required },
+  userName: { required, minLength: minLength(5), maxLength: maxLength(150) },
   userEmail: { required, email },
   userPhone: { required, minLength: minLength(18), maxLength: maxLength(18) },
   userMessage: {
@@ -33,10 +34,18 @@ async function addUserInfo(event) {
 
   isDisabledButton.value = true;
 
-  await addBid(forms.userName, forms.userEmail, forms.userMessage, (res) => {
+  console.log("forms", forms);
+
+  await addBid(forms, (res) => {
     showResult.value = true;
 
     if (res?.ok) {
+      forms.userName = "";
+      forms.userEmail = "";
+      forms.userPhone = "";
+      forms.userMessage = "";
+      v$.value.$reset();
+
       messageStatus.value = true;
     } else {
       messageStatus.value = false;
@@ -62,7 +71,7 @@ async function addUserInfo(event) {
       >
         Contact Form
       </p>
-      <form @submit.prevent="addUserInfo" class="font-roboto-regular space-y-7">
+      <form  class="font-roboto-regular space-y-7">
         <div class="">
           <label
             class="block text-lg text-primary-dark dark:text-primary-light mb-2"
@@ -73,6 +82,16 @@ async function addUserInfo(event) {
               class="text-red-600"
               >error empty</span
             ></label
+          >
+          <span
+            v-if="v$.userName.$dirty && v$.userName.minLength.$invalid"
+            class="text-red-600"
+            >error low</span
+          >
+          <span
+            v-if="v$.userName.$dirty && v$.userName.maxLength.$invalid"
+            class="text-red-600"
+            >error high</span
           >
           <input
             v-model="forms.userName"
@@ -208,8 +227,7 @@ async function addUserInfo(event) {
             title="Send Message"
             :disabled="isDisabledButton"
             :class="{
-              'opacity-50':
-                v$.$errors.length || isDisabledButton,
+              'opacity-50': v$.$errors.length || isDisabledButton,
               'hover:bg-indigo-600': !v$.$errors.length && !isDisabledButton,
             }"
             class="px-4 py-2.5 text-white tracking-wider bg-indigo-500 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-300"

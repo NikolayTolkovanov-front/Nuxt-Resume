@@ -1,7 +1,8 @@
-const url = "http://localhost:3000/bids";
+const url = "http://localhost:8080/bids";
 
-export const addBid = async (name, email, description, cb) => {
-  const bidInfo = JSON.stringify({ name, email, description });
+export const addBid = async (formData, cb) => {
+  const bidInfo = JSON.stringify(formData);
+  console.log('bidInfo', bidInfo);
 
   await fetch(url, {
     method: "POST",

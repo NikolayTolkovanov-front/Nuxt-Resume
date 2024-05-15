@@ -11,10 +11,15 @@
   <div>
     <AboutMe class="container mx-auto" />
 
-    <AboutCounter />
+    <div class="flex flex-col xl:flex-row-reverse justify-between xl:container xl:mx-auto mt-10 sm:mt-20 ">
+      <AboutCounter />
 
-    <AboutClients class="container mx-auto" />
+      <AboutClients class="flex flex-col items-center" />
+    </div>
+
   </div>
 </template>
 
-<style scoped></style>
+<style>
+
+</style>

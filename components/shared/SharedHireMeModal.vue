@@ -23,7 +23,7 @@ const forms = reactive({
 });
 
 const rules = {
-  userName: { required },
+  userName: { required, minLength: minLength(5), maxLength: maxLength(150) },
   userEmail: { required, email },
   userPhone: { required, minLength: minLength(18), maxLength: maxLength(18) },
   userMessage: {
@@ -42,10 +42,16 @@ async function addUserInfo(event) {
 
   isDisabledButton.value = true;
 
-  await addBid(forms.userName, forms.userEmail, forms.userMessage, (res) => {
+  await addBid(forms, (res) => {
     showResult.value = true;
 
     if (res?.ok) {
+      forms.userName = "";
+      forms.userEmail = "";
+      forms.userPhone = "";
+      forms.userMessage = "";
+      v$.value.$reset();
+
       messageStatus.value = true;
     } else {
       messageStatus.value = false;
@@ -59,21 +65,25 @@ async function addUserInfo(event) {
 }
 
 function closeModal() {
-  forms.userName = ""
-  forms.userEmail = ""
-  forms.userPhone = ""
-  forms.userMessage = ""
+  forms.userName = "";
+  forms.userEmail = "";
+  forms.userPhone = "";
+  forms.userMessage = "";
 
-  v$.value.$reset()
+  v$.value.$reset();
 
-  props.showModal()
+  props.showModal();
 }
 </script>
 
 <template>
   <ReusableFormResult :showResult="showResult" :messageStatus="messageStatus" />
   <transition name="fade">
-    <div v-show="modal" class="font-roboto-regular fixed inset-0 z-30" aria-modal="Hire Me Modal">
+    <div
+      v-show="modal"
+      class="font-roboto-regular fixed inset-0 z-30"
+      aria-modal="Hire Me Modal"
+    >
       <!-- Modal body background as backdrop -->
       <div
         v-show="modal"
@@ -100,7 +110,7 @@ function closeModal() {
                   class="px-4 flex items-center text-primary-dark dark:text-primary-light"
                   @click="showModal()"
                 >
-                <Icon name="fa6-solid:xmark" size="20" />
+                  <Icon name="fa6-solid:xmark" size="20" />
                 </button>
               </div>
               <div class="modal-body p-5 w-full h-full">
@@ -120,6 +130,20 @@ function closeModal() {
                         class="text-red-600"
                         >error empty</span
                       ></label
+                    >
+                    <span
+                      v-if="
+                        v$.userName.$dirty && v$.userName.minLength.$invalid
+                      "
+                      class="text-red-600"
+                      >error low</span
+                    >
+                    <span
+                      v-if="
+                        v$.userName.$dirty && v$.userName.maxLength.$invalid
+                      "
+                      class="text-red-600"
+                      >error high</span
                     >
                     <input
                       v-model="forms.userName"
@@ -266,8 +290,7 @@ function closeModal() {
                       title="Send Request"
                       :disabled="isDisabledButton"
                       :class="{
-                        'opacity-75':
-                          v$.$errors.length || isDisabledButton,
+                        'opacity-75': v$.$errors.length || isDisabledButton,
                         'hover:bg-indigo-600':
                           !v$.$errors.length && !isDisabledButton,
                       }"

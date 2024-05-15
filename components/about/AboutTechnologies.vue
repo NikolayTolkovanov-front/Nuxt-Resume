@@ -5,13 +5,10 @@ import TagCloud from "TagCloud";
 const store = useMainStore();
 
 onMounted(() => {
-  const tagCloudContainer = ".about-clients";
+  const tagCloudContainer = ".about-technologies";
   const tagCloudTexts = store.technologies;
   let tagCloudRadius = document.body.clientWidth >= 600 ? 300 : 160
-  // const tagCloudRadius = computed(() => {
-  //   console.log('document.body.clientWidth', document.body.clientWidth);
-  //   return document.body.clientWidth > 640 ? 300 : 150
-  // });
+
   let tagCloudOptions = {
     radius: tagCloudRadius,
     itemClass:
@@ -44,14 +41,8 @@ onMounted(() => {
     >
       {{ store.clientsHeading }}
     </p>
-    <!-- <div class="grid grid-cols-2 sm:grid-cols-4 mt-10 sm:mt-14 gap-2">
-      <AboutClientSingle
-        v-for="client in store.clients"
-        :key="client.id"
-        :client="client"
-      />
-    </div> -->
-    <div class="about-clients"></div>
+
+    <div class="about-technologies"></div>
   </div>
 </template>
 <style lang="scss">

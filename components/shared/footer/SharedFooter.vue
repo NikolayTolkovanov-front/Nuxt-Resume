@@ -7,7 +7,7 @@ const store = useMainStore()
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <section class="container mx-auto">
     <div
       class="
         pt-20
@@ -61,7 +61,7 @@ const store = useMainStore()
       <SharedFooterCopyright />
     </div>
 
-  </div>
+  </section>
 </template>
 
 <style scoped></style>

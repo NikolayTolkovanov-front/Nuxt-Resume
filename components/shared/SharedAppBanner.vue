@@ -47,12 +47,12 @@ onMounted(() => {});
       <img
         v-show="currentColor === 'dark'"
         src="~/public/developer-dark.svg"
-        alt="Developer Dark"
+        alt=""
       />
       <img
         v-show="currentColor === 'light'"
         src="~/public/developer.svg"
-        alt="Developer Light"
+        alt=""
       />
     </div>
   </section>

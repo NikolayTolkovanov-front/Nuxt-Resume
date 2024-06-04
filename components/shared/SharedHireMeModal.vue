@@ -79,7 +79,7 @@ function closeModal() {
 <template>
   <ReusableFormResult :showResult="showResult" :messageStatus="messageStatus" />
   <transition name="fade">
-    <div
+    <section
       v-show="modal"
       class="font-roboto-regular fixed inset-0 z-30"
       aria-modal="Hire Me Modal"
@@ -91,7 +91,7 @@ function closeModal() {
         class="bg-filter bg-black bg-opacity-50 fixed inset-0 w-full h-full z-20"
       ></div>
       <!-- Modal contents -->
-      <main class="flex flex-col items-center justify-center h-full w-full">
+      <section class="flex flex-col items-center justify-center h-full w-full">
         <transition name="fade-up-down">
           <div
             v-show="modal"
@@ -314,8 +314,8 @@ function closeModal() {
             </div>
           </div>
         </transition>
-      </main>
-    </div>
+      </section>
+    </section>
   </transition>
 </template>
 

@@ -7,7 +7,7 @@ const store = useMainStore()
 
 <template>
   <!-- Contact details -->
-  <div class="w-full md:w-1/2">
+  <section class="w-full md:w-1/2">
     <div class="text-left max-w-xl px-6">
       <h2
         class="
@@ -40,7 +40,7 @@ const store = useMainStore()
         </li>
       </ul>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped></style>

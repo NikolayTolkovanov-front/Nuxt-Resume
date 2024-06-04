@@ -18,7 +18,7 @@ const relatedProjects = computed(() => {
 </script>
 
 <template>
-  <div
+  <section
     class="
       mt-10
       pt-10
@@ -42,7 +42,7 @@ const relatedProjects = computed(() => {
       {{ store.relatedProjectsHeading }}
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-4 gap-10">
+    <article class="grid grid-cols-1 sm:grid-cols-4 gap-10">
       <NuxtLink :to="`/projects/${project.id}`" v-for="project in relatedProjects" :key="project.id">
         <img
           :src="`/${project.img}`"
@@ -50,6 +50,6 @@ const relatedProjects = computed(() => {
           :alt="project.title"
         />
       </NuxtLink>
-    </div>
-  </div>
+    </article>
+  </section>
 </template>

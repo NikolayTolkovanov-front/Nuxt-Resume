@@ -23,37 +23,37 @@ const currentURL = computed(() => route.fullPath)
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <section class="container mx-auto">
     <!-- Check if there are projects and then load -->
-    <div v-if="currentProject">
+    <section v-if="currentProject">
       <!-- Project heading and meta info -->
-      <div>
+      <section>
         <p
           class="font-roboto-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-14 sm:mt-20 mb-7"
         >
           {{ currentProject.title }}
         </p>
         <div class="flex">
-          <div class="flex items-center mr-10">
+          <section class="flex items-center mr-10">
             <Icon name="fa6-solid:clock" class="w-4 h-4 text-ternary-dark dark:text-ternary-light" />
-            <span
+            <date
               class="font-roboto-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-              >{{ currentProject.publishDate }}</span
+              >{{ currentProject.publishDate }}</date
             >
-          </div>
-          <div class="flex items-center">
+          </section>
+          <section class="flex items-center">
             <Icon name="fa6-solid:tag" class="w-4 h-4 text-ternary-dark dark:text-ternary-light" />
-            <span
+            <b
               class="font-roboto-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-              >{{ currentProject.tag }}</span
+              >{{ currentProject.tag }}</b
             >
-          </div>
+          </section>
         </div>
-      </div>
+      </section>
 
       <!-- Project gallery -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12">
-        <div
+      <section class="grid grid-cols-1 sm:grid-cols-3 sm:gap-10 mt-12">
+        <article
           class="mb-10 sm:mb-0"
           v-for="projectImage in currentProject.projectImages"
           :key="projectImage.id"
@@ -62,15 +62,15 @@ const currentURL = computed(() => route.fullPath)
             :src="projectImage.img"
             class="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
           />
-        </div>
-      </div>
+        </article>
+      </section>
 
       <!-- Project info -->
-      <div class="block sm:flex gap-0 sm:gap-10 mt-14">
+      <section class="block sm:flex gap-0 sm:gap-10 mt-14">
         <!-- Single project left section details -->
-        <div class="w-full sm:w-1/3 text-left">
+        <section class="w-full sm:w-1/3 text-left">
           <!-- Single project client details -->
-          <div class="mb-7">
+          <section class="mb-7">
             <p
               class="font-roboto-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2"
             >
@@ -82,7 +82,7 @@ const currentURL = computed(() => route.fullPath)
                 :key="info.id"
                 class="font-roboto-regular text-ternary-dark dark:text-ternary-light"
               >
-                <span>{{ info.title }}: </span>
+                <b>{{ info.title }}: </b>
                 <a
                   :href="info.title == 'Phone' ? `tel:${info.details}`: info.details"
                   :class="
@@ -95,10 +95,10 @@ const currentURL = computed(() => route.fullPath)
                 >
               </li>
             </ul>
-          </div>
+          </section>
 
           <!-- Single project objectives -->
-          <div class="mb-7">
+          <section class="mb-7">
             <p
               class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
@@ -109,10 +109,10 @@ const currentURL = computed(() => route.fullPath)
             >
               {{ currentProject.objectivesDetails }}
             </p>
-          </div>
+          </section>
 
           <!-- Single project technologies -->
-          <div class="mb-7">
+          <section class="mb-7">
             <p
               class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
@@ -123,10 +123,10 @@ const currentURL = computed(() => route.fullPath)
             >
               {{ currentProject.technologies.join(", ") }}
             </p>
-          </div>
+          </section>
 
           <!-- Single project social sharing -->
-          <div>
+          <section>
             <p
               class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
@@ -144,11 +144,11 @@ const currentURL = computed(() => route.fullPath)
                 <Icon :name="social.icon" size="30" />
               </a>
             </div>
-          </div>
-        </div>
+          </section>
+        </section>
 
         <!-- Single project right section details -->
-        <div class="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
+        <section class="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
           <p
             class="font-roboto-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
           >
@@ -161,18 +161,18 @@ const currentURL = computed(() => route.fullPath)
           >
             {{ projectDetail.details }}
           </p>
-        </div>
-      </div>
+        </section>
+      </section>
 
       <!-- Project related projects -->
       <ProjectsRelated :currentProjectId="currentProject.id" />
-    </div>
+    </section>
 
     <!-- Load not found components if no project found -->
     <div v-else class="font-roboto-medium container mx-auto text-center">
       <h1>No projects yet</h1>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped></style>

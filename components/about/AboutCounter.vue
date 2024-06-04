@@ -4,58 +4,58 @@
 
 <template>
     <!-- About me counters start -->
-    <div
+    <section
       class="container mx-auto py-20 block  text-center font-roboto-regular bg-primary-light dark:bg-ternary-dark shadow-sm xl:grid xl:grid-cols-2 xl:gap-16 xl:self-start xl:p-10 sm:flex sm:justify-between sm:items-center sm:rounded-xl
       "
     >
       <!-- Years of experience counter -->
-      <div class="flex flex-col mb-20 sm:mb-0">
-        <span
+      <article class="flex flex-col mb-20 sm:mb-0">
+        <b
           class="font-roboto-medium text-4xl font-bold text-secondary-dark dark:text-secondary-light mb-2
           "
-          >7+</span
+          >7+</b
         >
-        <span class="block text-md text-ternary-dark dark:text-ternary-light"
-          >Years of experience</span
+        <strong class="block text-md text-ternary-dark dark:text-ternary-light"
+          >Years of experience</strong
         >
-      </div>
+      </article>
 
       <!-- GitHub stars counter -->
-      <div class="flex flex-col mb-20 sm:mb-0">
-        <span
+      <article class="flex flex-col mb-20 sm:mb-0">
+        <b
           class="font-roboto-medium text-4xl font-bold text-secondary-dark dark:text-secondary-light mb-2
           "
-          >2k</span
+          >2k</b
         >
-        <span class="block text-md text-ternary-dark dark:text-ternary-light"
-          >Stars on GitHub</span
+        <strong class="block text-md text-ternary-dark dark:text-ternary-light"
+          >Stars on GitHub</strong
         >
-      </div>
+      </article>
 
       <!-- Positive feedback counter -->
-      <div class="flex flex-col mb-20 sm:mb-0">
-        <span
+      <article class="flex flex-col mb-20 sm:mb-0">
+        <b
           class="font-roboto-medium text-4xl font-bold text-secondary-dark dark:text-secondary-light mb-2
           "
-          >32</span
+          >32</b
         >
-        <span class="block text-md text-ternary-dark dark:text-ternary-light"
-          >Positive feedback</span
+        <strong class="block text-md text-ternary-dark dark:text-ternary-light"
+          >Positive feedback</strong
         >
-      </div>
+      </article>
 
       <!-- Projects completed counter -->
-      <div class="flex flex-col mb-0">
-        <span
+      <article class="flex flex-col mb-0">
+        <b
           class="font-roboto-medium text-4xl font-bold text-secondary-dark dark:text-secondary-light mb-2
           "
-          >77</span
+          >77</b
         >
-        <span class="block text-md text-ternary-dark dark:text-ternary-light"
-          >Projects completed</span
+        <strong class="block text-md text-ternary-dark dark:text-ternary-light"
+          >Projects completed</strong
         >
-      </div>
-    </div>
+      </article>
+    </section>
 </template>
 
 <style lang="scss" scoped></style>

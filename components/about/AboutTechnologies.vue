@@ -34,15 +34,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <!-- About clients section -->
+  <!-- About technologies section -->
   <div class="mt-20 xl:mt-0">
-    <p
+    <h1
       class="font-roboto-medium text-2xl text-center sm:text-3xl text-primary-dark dark:text-primary-light"
     >
-      {{ store.clientsHeading }}
-    </p>
+      {{ store.technologiesHeading }}
+    </h1>
 
-    <div class="about-technologies"></div>
+    <section class="about-technologies"></section>
   </div>
 </template>
 <style lang="scss">

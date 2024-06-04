@@ -24,7 +24,7 @@ watch(() => props.showResult, (value) => {
 
 <template>
   <transition name="fade">
-    <div
+    <section
       v-if="showMessage"
       class="max-w-full p-3 fixed top-0 right-0 sm:max-w-sm bg-white dark:bg-ternary-dark dark:text-primary-light rounded-none sm:rounded-bl-lg z-40"
     >
@@ -47,7 +47,7 @@ watch(() => props.showResult, (value) => {
         @click="showMessage = false"
         aria-label="Close Message"
       />
-    </div>
+    </section>
   </transition>
 </template>
 

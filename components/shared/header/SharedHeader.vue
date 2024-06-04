@@ -13,18 +13,19 @@ function themeSwitcher() {
 }
 
 function showModal() {
-  const layoutDefault = document.querySelector('.layout-default')
+  const layoutDefault = document.querySelector(".layout-default");
 
   if (modal.value) {
     // Stop screen scrolling
-    layoutDefault.style.paddingRight = "0px"
+    layoutDefault.style.paddingRight = "0px";
     document
       .getElementsByTagName("html")[0]
       .classList.remove("overflow-y-hidden");
     modal.value = false;
   } else {
-    const lockPaddingValue = window.innerWidth - layoutDefault.offsetWidth + 'px'
-    layoutDefault.style.paddingRight = lockPaddingValue
+    const lockPaddingValue =
+      window.innerWidth - layoutDefault.offsetWidth + "px";
+    layoutDefault.style.paddingRight = lockPaddingValue;
 
     document.getElementsByTagName("html")[0].classList.add("overflow-y-hidden");
     modal.value = true;
@@ -41,15 +42,9 @@ function showModal() {
       <!-- Header menu links and small screen hamburger menu -->
       <div class="flex justify-between items-center px-6 sm:px-0">
         <!-- Header logos -->
-        <div>
-          <NuxtLink to="/">
-            <img
-              src="~/public/logo-light.svg"
-              class="w-30"
-              alt="Light Logo"
-            />
-          </NuxtLink>
-        </div>
+        <NuxtLink to="/">
+          <img src="~/public/logo-light.svg" class="w-30" alt="Light Logo" />
+        </NuxtLink>
 
         <!-- Theme switcher small screen -->
         <button
@@ -120,10 +115,7 @@ function showModal() {
       </div>
 
       <!-- Header links -->
-      <SharedHeaderNavigation
-        :isOpen="isOpen"
-        :showModal="showModal"
-      />
+      <SharedHeaderNavigation :isOpen="isOpen" :showModal="showModal" />
 
       <!-- Header right section buttons -->
       <div
@@ -163,7 +155,7 @@ function showModal() {
           </svg>
           <!-- Light mode icon -->
           <svg
-          v-if="$colorMode.value == 'dark'"
+            v-if="$colorMode.value == 'dark'"
             xmlns="http://www.w3.org/2000/svg"
             class="text-gray-200 hover:text-gray-50 w-6 h-6"
             fill="none"
@@ -182,9 +174,6 @@ function showModal() {
     </div>
 
     <!-- Hire me modal -->
-    <SharedHireMeModal
-      :showModal="showModal"
-      :modal="modal"
-    />
+    <SharedHireMeModal :showModal="showModal" :modal="modal" />
   </nav>
 </template>

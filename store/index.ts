@@ -5,6 +5,7 @@ export const useMainStore = defineStore("main", {
   state: () => ({
     projectsHeading: "Projects Portfolio",
     projectsDescription: "Some of the projects I have successfully completed",
+    projectsFilterHeading: "Search projects by title or filter by category",
     projects: [
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdb",
@@ -534,7 +535,7 @@ export const useMainStore = defineStore("main", {
       "MySQL",
     ],
     relatedProjectsHeading: "Related Projects",
-    clientsHeading: "Some of the brands I worked with",
+    technologiesHeading: "Some of the brands I worked with",
     clients: [
       {
         id: uuidv4(),
@@ -674,6 +675,8 @@ export const useMainStore = defineStore("main", {
       "Ваша заявка успешно отправлена, с вами свяжутся через некоторое время",
     failMessage:
       "К сожалению, ваша заявка не была отправлена, попробуйте через несколько минут или свяжитесь по номеру:",
+    siteName: "Nuxt.js & Tailwind CSS Portfolio",
+    siteAuthor: "Nikolay Tolkovanov",
   }),
 
   actions: {},

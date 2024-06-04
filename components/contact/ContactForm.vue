@@ -62,7 +62,7 @@ async function addUserInfo(event) {
 <template>
   <ReusableFormResult :showResult="showResult" :messageStatus="messageStatus" />
   <!-- Contact form -->
-  <div class="w-full md:w-1/2">
+  <section class="w-full md:w-1/2">
     <div
       class="leading-loose max-w-xl m-4 p-7 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
     >
@@ -71,7 +71,7 @@ async function addUserInfo(event) {
       >
         Contact Form
       </p>
-      <form  class="font-roboto-regular space-y-7">
+      <form class="font-roboto-regular space-y-7">
         <div class="">
           <label
             class="block text-lg text-primary-dark dark:text-primary-light mb-2"
@@ -237,7 +237,7 @@ async function addUserInfo(event) {
         </div>
       </form>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped></style>

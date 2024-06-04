@@ -7,13 +7,13 @@ const store = useMainStore();
 const filters = reactive({
   selectedProject: {
     str: "",
-    cb: filterProjectsByCategory
+    cb: filterProjectsByCategory,
   },
   searchProject: {
     str: "",
-    cb: filterProjectsBySearch
-  }
-})
+    cb: filterProjectsBySearch,
+  },
+});
 
 function filterProjectsByCategory(projects) {
   return projects.filter((item) => {
@@ -30,40 +30,55 @@ function filterProjectsBySearch(projects) {
 }
 
 const filteredProjects = computed(() => {
-  let projectsToFilter = store.projects
+  let projectsToFilter = store.projects;
 
   for (let filter in filters) {
     if (filters[filter].str) {
-      projectsToFilter = filters[filter].cb(projectsToFilter)
+      projectsToFilter = filters[filter].cb(projectsToFilter);
     }
   }
 
-  return projectsToFilter
-})
+  return projectsToFilter;
+});
 
+watch(filteredProjects, () => {
+  const layoutDefault = document.querySelector(".layout-default");
+  console.log("filteredProjects.value", filteredProjects.value);
+  console.log("filteredProjects.value.length", filteredProjects.value.length);
+
+  if (layoutDefault) {
+    const isMobileDevice =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+
+    if (filteredProjects.value.length === 0 && !isMobileDevice) {
+      const lockPaddingValue =
+        window.innerWidth - layoutDefault.offsetWidth + "px";
+      layoutDefault.style.paddingRight = lockPaddingValue;
+      return;
+    }
+
+    layoutDefault.style.paddingRight = "0px";
+  }
+});
 </script>
 
 <template>
-  <div class="pt-10 sm:pt-20 md:pt-24">
+  <section class="pt-10 sm:pt-20 md:pt-24">
     <!-- Projects grid header -->
-    <div class="text-center">
-      <p
-        class="font-roboto-bold text-2xl sm:text-5xl font-semibold mb-2 text-ternary-dark dark:text-ternary-light"
-      >
-        {{ store.projectsHeading }}
-      </p>
-      <!-- Note: This description is commented out, but if you want to see it, just uncomment this -->
-      <!-- <p class="text-lg sm:text-xl text-gray-500 dark:text-ternary-light">
-        {{ store.projectsDescription }}
-      </p> -->
-    </div>
+    <h1
+      class="font-roboto-bold text-center text-2xl sm:text-5xl font-semibold mb-2 text-ternary-dark dark:text-ternary-light"
+    >
+      {{ store.projectsHeading }}
+    </h1>
 
     <!-- Filter and search projects -->
-    <div class="mt-8 sm:mt-10">
+    <section class="mt-8 sm:mt-10">
       <h3
         class="font-roboto-regular text-center text-secondary-dark dark:text-ternary-light text-md sm:text-xl font-normal mb-4"
       >
-        Search projects by title or filter by category
+        {{ store.projectsFilterHeading }}
       </h3>
       <div
         class="flex justify-between border-b border-primary-light dark:border-secondary-dark pb-3 gap-2"
@@ -72,7 +87,10 @@ const filteredProjects = computed(() => {
           <span
             class="hidden sm:block bg-primary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer"
           >
-            <Icon name="fa-solid:search" class="ml-0 sm:ml-1 mr-1 text-black dark:text-white duration-100" />
+            <Icon
+              name="fa-solid:search"
+              class="ml-0 sm:ml-1 mr-1 text-black dark:text-white duration-100"
+            />
           </span>
           <input
             v-model="filters.searchProject.str"
@@ -90,12 +108,17 @@ const filteredProjects = computed(() => {
           @change="filters.selectedProject.str = $event"
         />
       </div>
-    </div>
+    </section>
 
     <!-- Projects grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
-      <p v-if="!filteredProjects.length" class="font-roboto-bold text-xl text-ternary-dark dark:text-ternary-light font-semibold">No projects</p>
-      <div
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
+      <p
+        v-if="!filteredProjects.length"
+        class="font-roboto-bold text-xl text-ternary-dark dark:text-ternary-light font-semibold"
+      >
+        No projects
+      </p>
+      <article
         v-for="project in filteredProjects"
         :key="project.id"
         class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
@@ -110,20 +133,20 @@ const filteredProjects = computed(() => {
             />
           </div>
           <div class="text-center px-4 py-6">
-            <p
+            <strong
               class="font-roboto-bold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2"
             >
               {{ project.title }}
-            </p>
-            <span
+            </strong>
+            <b
               class="font-roboto-medium text-lg text-ternary-dark dark:text-ternary-light"
-              >{{ project.category }}</span
+              >{{ project.category }}</b
             >
           </div>
         </NuxtLink>
-      </div>
-    </div>
-  </div>
+      </article>
+    </section>
+  </section>
 </template>
 
 <style lang="scss" scoped></style>

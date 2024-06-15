@@ -224,7 +224,7 @@ async function addUserInfo(event) {
         <div class="mt-6">
           <ReusableButton
             @click.prevent="addUserInfo"
-            title="Send Message"
+            title="Отправить"
             :disabled="isDisabledButton"
             :class="{
               'opacity-50': v$.$errors.length || isDisabledButton,
@@ -232,7 +232,7 @@ async function addUserInfo(event) {
             }"
             class="px-4 py-2.5 text-white tracking-wider bg-indigo-500 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-300"
             type="submit"
-            aria-label="Send Message"
+            aria-label="Отправить"
           />
         </div>
       </form>

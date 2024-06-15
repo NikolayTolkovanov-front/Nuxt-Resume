@@ -9,6 +9,7 @@
 <template>
   <div class="container mx-auto">
     <SharedAppBanner />
+
     <ProjectsGrid />
 
     <!-- View more projects button -->
@@ -31,9 +32,9 @@
           sm:text-xl
           duration-300
         "
-        aria-label="More Projects"
+        aria-label="Больше проектов"
       >
-        <ReusableButton title="More Projects" />
+        <ReusableButton title="Больше проектов" />
       </NuxtLink>
     </div>
   </div>

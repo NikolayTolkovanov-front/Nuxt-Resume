@@ -3,14 +3,14 @@ import { defineStore } from "pinia";
 
 export const useMainStore = defineStore("main", {
   state: () => ({
-    projectsHeading: "Projects Portfolio",
-    projectsDescription: "Some of the projects I have successfully completed",
-    projectsFilterHeading: "Search projects by title or filter by category",
+    projectsHeading: "Портфолио проектов",
+    projectsFilterHeading: "Поиск проектов по названию и категории",
+    noProjectsText: "Нет проектов :(",
     projects: [
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdb",
-        title: "Google Health Platform",
-        category: "Web Application",
+        title: "Moreodor",
+        category_id: 2,
         img: "images/web-project-2.jpg",
         publishDate: "Nov 04, 2021",
         tag: "UI / Frontend",
@@ -94,7 +94,7 @@ export const useMainStore = defineStore("main", {
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdc",
         title: "Phoenix Digital Agency",
-        category: "Mobile Application",
+        category_id: 1,
         img: "images/mobile-project-2.jpg",
         publishDate: "Nov 04, 2021",
         tag: "UI / Frontend",
@@ -178,7 +178,7 @@ export const useMainStore = defineStore("main", {
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdy",
         title: "Project Management UI",
-        category: "UI/UX Design",
+        category_id: 1,
         img: "images/ui-project-1.jpg",
         publishDate: "Nov 04, 2021",
         tag: "UI / Frontend",
@@ -262,7 +262,7 @@ export const useMainStore = defineStore("main", {
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8ccc99",
         title: "Cloud Storage Platform",
-        category: "UI/UX Design",
+        category_id: 2,
         img: "images/ui-project-2.jpg",
         publishDate: "Nov 04, 2021",
         tag: "Web / Frontend",
@@ -346,7 +346,7 @@ export const useMainStore = defineStore("main", {
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdm",
         title: "Uber Social App",
-        category: "Mobile Application",
+        category_id: 2,
         img: "images/mobile-project-1.jpg",
         publishDate: "Nov 04, 2021",
         tag: "UI / Mobile",
@@ -430,7 +430,7 @@ export const useMainStore = defineStore("main", {
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccbb",
         title: "Apple Design System",
-        category: "Web Application",
+        category_id: 1,
         img: "images/web-project-1.jpg",
         publishDate: "Nov 04, 2021",
         tag: "UI / Mobile",
@@ -521,6 +521,7 @@ export const useMainStore = defineStore("main", {
       "Vue.js",
       "Vuex",
       "Pinia",
+      "Vuetify",
       "React.js",
       "Redux",
       "jQuery",
@@ -534,50 +535,9 @@ export const useMainStore = defineStore("main", {
       "Jenkins",
       "MySQL",
     ],
-    relatedProjectsHeading: "Related Projects",
-    technologiesHeading: "Some of the brands I worked with",
-    clients: [
-      {
-        id: uuidv4(),
-        title: "Amazon",
-        img: "../brands/amazon_gray.png",
-      },
-      {
-        id: uuidv4(),
-        title: "Sony",
-        img: "../brands/sony_gray.png",
-      },
-      {
-        id: uuidv4(),
-        title: "Adidas",
-        img: "../brands/adidas_gray.png",
-      },
-      {
-        id: uuidv4(),
-        title: "FILA",
-        img: "../brands/fila_gray.png",
-      },
-      {
-        id: uuidv4(),
-        title: "NB",
-        img: "../brands/nb_gray.png",
-      },
-      {
-        id: uuidv4(),
-        title: "SAMSUNG",
-        img: "../brands/samsung_gray.png",
-      },
-      {
-        id: uuidv4(),
-        title: "CANON",
-        img: "../brands/canon_gray.png",
-      },
-      {
-        id: uuidv4(),
-        title: "PUMA",
-        img: "../brands/puma_gray.png",
-      },
-    ],
+    relatedProjectsHeading: "Похожие проекты",
+    technologiesHeading: "Технологии, с которыми работаю",
+
     aboutMe: [
       {
         id: uuidv4(),
@@ -631,43 +591,33 @@ export const useMainStore = defineStore("main", {
     ],
     categories: [
       {
-        id: uuidv4(),
-        value: "web",
-        name: "Web Application",
+        id: 1,
+        value: "landing",
+        name: "Лендинг",
       },
       {
-        id: uuidv4(),
-        value: "mobile",
-        name: "Mobile Applicaiton",
-      },
-      {
-        id: uuidv4(),
-        value: "ui-ux",
-        name: "UI/UX Design",
-      },
-      {
-        id: uuidv4(),
-        value: "branding",
-        name: "Branding & Animations",
+        id: 2,
+        value: "multipage",
+        name: "Многостраничный сайт",
       },
     ],
     contacts: [
       {
         id: 1,
         name: "address",
-        data: "Your Address, Your City, Your Country",
+        data: "Россия, г.Волгоград",
         icon: "fa6-solid:location-dot",
       },
       {
         id: 2,
         name: "email",
-        data: "email@domain.com",
+        data: "tnrvlg@gmail.com",
         icon: "fa6-solid:envelope",
       },
       {
         id: 3,
         name: "phone",
-        data: "555 8888 888",
+        data: "+7 996 484 69 19",
         icon: "fa6-solid:phone",
       },
     ],
@@ -685,5 +635,8 @@ export const useMainStore = defineStore("main", {
     getProjectById: (state) => (id) => {
       return state.projects.find((project) => project.id == id);
     },
+    getCategoryById: (state) => (id) => {
+      return state.categories.filter((category) => category.id === id)[0].name
+    }
   },
 });

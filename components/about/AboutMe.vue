@@ -8,7 +8,7 @@ const store = useMainStore();
   <section class="block sm:flex sm:gap-10 mt-10 sm:mt-20">
     <!-- About profile image -->
     <section class="w-full sm:w-1/4 mb-7 sm:mb-0">
-      <img src="~/public/profile.jpeg" class="rounded-lg w-96" alt="" />
+      <img src="~/public/me.webp" class="rounded-lg w-96" alt="Николай Толкованов" width="358" height="410" />
     </section>
 
     <!-- About details -->

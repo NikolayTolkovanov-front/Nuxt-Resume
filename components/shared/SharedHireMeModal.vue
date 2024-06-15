@@ -82,7 +82,7 @@ function closeModal() {
     <section
       v-show="modal"
       class="font-roboto-regular fixed inset-0 z-30"
-      aria-modal="Hire Me Modal"
+      aria-modal="Сотрудничать Модальное окно"
     >
       <!-- Modal body background as backdrop -->
       <div
@@ -287,7 +287,7 @@ function closeModal() {
                   </div>
                   <div class="mt-6 pb-4 sm:pb-1">
                     <ReusableButton
-                      title="Send Request"
+                      title="Отправить"
                       :disabled="isDisabledButton"
                       :class="{
                         'opacity-75': v$.$errors.length || isDisabledButton,
@@ -296,21 +296,21 @@ function closeModal() {
                       }"
                       class="px-4 py-2.5 text-white tracking-wider bg-indigo-500 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-300"
                       type="submit"
-                      aria-label="Submit Request"
+                      aria-label="Отправить"
                     />
                   </div>
                 </form>
               </div>
-              <!-- <div
+              <div
                 class="modal-footer mt-2 sm:mt-0 py-5 px-8 border0-t text-right"
               >
                 <ReusableButton
-                  title="Close"
+                  title="Закрыть"
                   class="px-4 sm:px-6 py-2 bg-gray-600 text-primary-light hover:bg-ternary-dark dark:bg-gray-200 dark:text-secondary-dark dark:hover:bg-primary-light rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
                   @click="closeModal()"
-                  aria-label="Close Hire Me Modal"
+                  aria-label="Закрыть"
                 />
-              </div> -->
+              </div>
             </div>
           </div>
         </transition>

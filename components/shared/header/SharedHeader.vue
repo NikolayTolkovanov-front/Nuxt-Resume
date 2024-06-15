@@ -43,7 +43,7 @@ function showModal() {
       <div class="flex justify-between items-center px-6 sm:px-0">
         <!-- Header logos -->
         <NuxtLink to="/">
-          <img src="~/public/logo-light.svg" class="w-30" alt="Light Logo" />
+          <img src="~/public/logo-light.svg" class="w-30" width="126" height="62" alt="NT" />
         </NuxtLink>
 
         <!-- Theme switcher small screen -->
@@ -121,14 +121,14 @@ function showModal() {
       <div
         class="hidden sm:flex justify-between items-center flex-col md:flex-row"
       >
-        <!-- Hire me button -->
+        <!-- Сотрудничать Модальное окно -->
         <div class="font-roboto-medium hidden md:block">
           <button
             class="text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5"
             @click="showModal()"
-            aria-label="Hire Me Button"
+            aria-label="Сотрудничать Модальное окно"
           >
-            Hire Me
+            Сотрудничать
           </button>
         </div>
 

@@ -19,37 +19,37 @@ defineProps({
       <NuxtLink
         to="/projects"
         class="block text-left text-lg text-primary-dark hover:text-indigo-700 dark:text-ternary-light dark:hover:text-indigo-400 sm:mx-4 mb-2 sm:py-2"
-        aria-label="Projects"
-        >Projects</NuxtLink
+        aria-label="Проекты"
+        >Проекты</NuxtLink
       >
     </li>
     <li>
       <NuxtLink
         to="/about"
         class="block text-left text-lg text-primary-dark hover:text-indigo-700 dark:text-ternary-light dark:hover:text-indigo-400 sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
-        aria-label="About Me"
-        >About Me</NuxtLink
+        aria-label="Обо мне"
+        >Обо мне</NuxtLink
       >
     </li>
     <li>
       <NuxtLink
         to="/contact"
         class="block text-left text-lg text-primary-dark hover:text-indigo-700 dark:text-ternary-light dark:hover:text-indigo-400 sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
-        aria-label="Contact"
-        >Contact</NuxtLink
+        aria-label="Конткаты"
+        >Контакты</NuxtLink
       >
     </li>
 
     <div
       class="font-roboto-regular border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark"
     >
-      <button
+      <ReusableButton
         class="sm:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-4 py-2 mt-2"
         @click="showModal()"
-        aria-label="Hire Me Button"
+        aria-label="Сотрудничать кнопка"
       >
-        Hire Me
-      </button>
+        Сотрудничать
+      </ReusableButton>
     </div>
   </ul>
 </template>

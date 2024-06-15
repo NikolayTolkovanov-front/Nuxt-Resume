@@ -3,6 +3,26 @@ import { useMainStore } from '~/store'
 
 const store = useMainStore()
 
+function getFormattedLink(name, data) {
+  switch (name) {
+    case "email":
+      return `mailto:${data}`;
+      break;
+
+    case "phone":
+      return `tel:${data.replace(/\s+/g, '')}`;
+      break;
+
+    case "address":
+      return null;
+      break;
+
+    default:
+      return "#";
+      break;
+  }
+}
+
 </script>
 
 <template>
@@ -26,7 +46,7 @@ const store = useMainStore()
             <Icon :name="contact.icon" size="20" class="text-gray-500 dark:text-gray-400 mr-4" />
           </span>
           <a
-            href="#"
+            :href="getFormattedLink(contact.name, contact.data)"
             class="text-lg mb-4 text-ternary-dark dark:text-ternary-light"
             :class="
               contact.icon === 'envelope' || contact.icon === 'phone'

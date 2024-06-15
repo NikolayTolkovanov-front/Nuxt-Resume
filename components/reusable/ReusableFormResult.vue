@@ -45,7 +45,7 @@ watch(() => props.showResult, (value) => {
         title="Закрыть"
         class="mt-2 px-4 sm:px-6 py-2 bg-gray-600 text-primary-light hover:bg-ternary-dark dark:bg-gray-200 dark:text-secondary-dark dark:hover:bg-primary-light rounded-md focus:ring-1 focus:ring-indigo-900 duration-500"
         @click="showMessage = false"
-        aria-label="Close Message"
+        aria-label="Закрыть результат отправки сообщения"
       />
     </section>
   </transition>

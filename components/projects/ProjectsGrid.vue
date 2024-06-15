@@ -111,12 +111,14 @@ watch(filteredProjects, () => {
     </section>
 
     <!-- Projects grid -->
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
+    <section
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10"
+    >
       <p
         v-if="!filteredProjects.length"
         class="font-roboto-bold text-xl text-ternary-dark dark:text-ternary-light font-semibold"
       >
-        No projects
+        {{ store.noProjectsText }}
       </p>
       <article
         v-for="project in filteredProjects"
@@ -125,14 +127,12 @@ watch(filteredProjects, () => {
         aria-label="Single Project"
       >
         <NuxtLink :to="`/projects/${project.id}`">
-          <div>
-            <img
+          <img
               :src="project.img"
               :alt="project.title"
               class="rounded-t-xl border-none"
             />
-          </div>
-          <div class="text-center px-4 py-6">
+          <div class="flex flex-col text-center px-4 py-6">
             <strong
               class="font-roboto-bold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2"
             >
@@ -140,7 +140,7 @@ watch(filteredProjects, () => {
             </strong>
             <b
               class="font-roboto-medium text-lg text-ternary-dark dark:text-ternary-light"
-              >{{ project.category }}</b
+              >{{ store.getCategoryById(project.category_id) }}</b
             >
           </div>
         </NuxtLink>

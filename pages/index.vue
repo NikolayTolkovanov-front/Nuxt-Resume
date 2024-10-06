@@ -10,7 +10,7 @@
   <div class="container mx-auto">
     <SharedAppBanner />
 
-    <ProjectsGrid />
+    <ProjectsGrid :countProjects="6" />
 
     <!-- View more projects button -->
     <div class="mt-5 sm:mt-14 flex justify-center">

@@ -2,7 +2,16 @@
 import { useMainStore } from "~/store";
 import { mapState } from "pinia";
 
+const props = defineProps({
+  countProjects: {
+    type: Number,
+    default: null
+  }
+});
+
+
 const store = useMainStore();
+const filteredCategories = store.categories.map((category) => category.name)
 
 const filters = reactive({
   selectedProject: {
@@ -17,15 +26,13 @@ const filters = reactive({
 
 function filterProjectsByCategory(projects) {
   return projects.filter((item) => {
-    let category =
-      item.category.charAt(0).toUpperCase() + item.category.slice(1);
-    return category.includes(filters.selectedProject.str);
+    let categoryId = store.categories.filter((category) => category.name === filters.selectedProject.str)[0].id
+    return item.category_id === categoryId
   });
 }
 
 function filterProjectsBySearch(projects) {
   let project = new RegExp(filters.searchProject.str, "i");
-  console.log("project", project);
   return projects.filter((el) => el.title.match(project));
 }
 
@@ -38,13 +45,15 @@ const filteredProjects = computed(() => {
     }
   }
 
+  if (props.countProjects) {
+    return projectsToFilter.slice(0, props.countProjects)
+  }
+
   return projectsToFilter;
 });
 
 watch(filteredProjects, () => {
   const layoutDefault = document.querySelector(".layout-default");
-  console.log("filteredProjects.value", filteredProjects.value);
-  console.log("filteredProjects.value.length", filteredProjects.value.length);
 
   if (layoutDefault) {
     const isMobileDevice =
@@ -99,12 +108,13 @@ watch(filteredProjects, () => {
             name="name"
             type="search"
             required=""
-            placeholder="Search Projects"
-            aria-label="Name"
+            placeholder="Поиск проектов"
+            aria-label="Имя проекта"
           />
         </div>
         <ProjectsFilter
           :select="filters.searchProject.str"
+          :selectOptions="filteredCategories"
           @change="filters.selectedProject.str = $event"
         />
       </div>
@@ -126,13 +136,13 @@ watch(filteredProjects, () => {
         class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
         aria-label="Single Project"
       >
-        <NuxtLink :to="`/projects/${project.id}`">
+        <NuxtLink :to="`/projects/${project.id}`" class="flex flex-col h-full">
           <img
               :src="project.img"
               :alt="project.title"
               class="rounded-t-xl border-none"
             />
-          <div class="flex flex-col text-center px-4 py-6">
+          <div class="flex flex-col grow justify-end text-center px-4 py-6">
             <strong
               class="font-roboto-bold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2"
             >

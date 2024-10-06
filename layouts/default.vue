@@ -21,6 +21,11 @@
 <script setup></script>
 
 <style>
+
+html.dark {
+  scrollbar-color: #1E3851 #0D2438;
+}
+
 .bg-secondary-light {
   transition: background 0.2s, color 0.2s;
 }

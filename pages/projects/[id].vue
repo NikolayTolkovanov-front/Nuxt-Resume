@@ -1,25 +1,35 @@
 <script setup>
-import { storeToRefs } from 'pinia';
-import { useMainStore } from '~/store';
+import { storeToRefs } from "pinia";
+import { useMainStore } from "~/store";
 
-const store = useMainStore()
-const { getProjectById } = storeToRefs(store)
+const store = useMainStore();
+const { getProjectById } = storeToRefs(store);
 
-const route = useRoute()
+const route = useRoute();
 
-const url = useRequestURL()
-const linkToProject = ref(url.href)
-// definePageMeta({
-//   scrollToTop: true,
-// })
+const url = useRequestURL();
+const linkToProject = ref(url.href);
 
 function getSharedLink(url) {
-  return `${url}${linkToProject.value}`
+  return `${url}${linkToProject.value}`;
 }
 
-const currentProject = computed(() => getProjectById.value(route.params.id))
-const currentURL = computed(() => route.fullPath)
+function getFormattedDate(inputDate) {
+  const [day, month, year] = inputDate.split(".");
 
+  const date = new Date(year, month - 1, day);
+
+  const formatter = new Intl.DateTimeFormat("ru-RU", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+  return formatter.format(date);
+}
+
+const currentProject = computed(() => getProjectById.value(route.params.id));
+const currentURL = computed(() => route.fullPath);
 </script>
 
 <template>
@@ -35,14 +45,20 @@ const currentURL = computed(() => route.fullPath)
         </p>
         <div class="flex">
           <section class="flex items-center mr-10">
-            <Icon name="fa6-solid:clock" class="w-4 h-4 text-ternary-dark dark:text-ternary-light" />
+            <Icon
+              name="fa6-solid:clock"
+              class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
+            />
             <date
               class="font-roboto-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-              >{{ currentProject.publishDate }}</date
+              >{{ getFormattedDate(currentProject.publishDate) }}</date
             >
           </section>
           <section class="flex items-center">
-            <Icon name="fa6-solid:tag" class="w-4 h-4 text-ternary-dark dark:text-ternary-light" />
+            <Icon
+              name="fa6-solid:tag"
+              class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
+            />
             <b
               class="font-roboto-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
               >{{ currentProject.tag }}</b
@@ -69,40 +85,25 @@ const currentURL = computed(() => route.fullPath)
       <section class="block sm:flex gap-0 sm:gap-10 mt-14">
         <!-- Single project left section details -->
         <section class="w-full sm:w-1/3 text-left">
-          <!-- Single project client details -->
-          <section class="mb-7">
-            <p
-              class="font-roboto-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2"
-            >
-              {{ currentProject.clientTitle }}
-            </p>
-            <ul class="leading-loose">
-              <li
-                v-for="info in currentProject.companyInfos"
-                :key="info.id"
-                class="font-roboto-regular text-ternary-dark dark:text-ternary-light"
-              >
-                <b>{{ info.title }}: </b>
-                <a
-                  :href="info.title == 'Phone' ? `tel:${info.details}`: info.details"
-                  :class="
-                    info.title == 'Website' || info.title == 'Phone'
-                      ? 'hover:underline cursor-pointer'
-                      : ''
-                  "
-                  aria-label="Project website and phone"
-                  >{{ info.details }}</a
-                >
-              </li>
-            </ul>
-          </section>
-
           <!-- Single project objectives -->
           <section class="mb-7">
             <p
               class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ currentProject.objectivesTitle }}
+              {{ store.projectsSidebarInfo.siteLinkTitle }}
+            </p>
+            <p
+              class="font-roboto-regular text-primary-dark dark:text-ternary-light"
+            >
+              <a class="hover:underline" :href="currentProject.siteLink" target="_blank">{{ currentProject.siteLink }}</a>
+            </p>
+          </section>
+
+          <section class="mb-7">
+            <p
+              class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
+            >
+              {{ store.projectsSidebarInfo.objectivesTitle }}
             </p>
             <p
               class="font-roboto-regular text-primary-dark dark:text-ternary-light"
@@ -116,7 +117,7 @@ const currentURL = computed(() => route.fullPath)
             <p
               class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ currentProject.techTitle }}
+              {{ store.projectsSidebarInfo.techTitle }}
             </p>
             <p
               class="font-roboto-regular text-primary-dark dark:text-ternary-light"
@@ -130,7 +131,7 @@ const currentURL = computed(() => route.fullPath)
             <p
               class="font-roboto-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2"
             >
-              {{ currentProject.socialTitle }}
+              {{ store.projectsSidebarInfo.socialTitle }}
             </p>
             <div class="flex items-center gap-3 mt-5">
               <a
@@ -152,7 +153,7 @@ const currentURL = computed(() => route.fullPath)
           <p
             class="font-roboto-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
           >
-            {{ currentProject.detailsTitle }}
+            {{ store.projectsSidebarInfo.detailsTitle }}
           </p>
           <p
             v-for="projectDetail in currentProject.projectDetails"
@@ -161,6 +162,15 @@ const currentURL = computed(() => route.fullPath)
           >
             {{ projectDetail.details }}
           </p>
+          <!-- project description list -->
+          <ol class="flex flex-col gap-10">
+            <li>
+              <p></p>
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ol>
         </section>
       </section>
 

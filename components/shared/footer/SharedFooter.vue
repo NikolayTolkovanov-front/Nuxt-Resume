@@ -30,7 +30,7 @@ const store = useMainStore()
             mb-5
           "
         >
-          Follow me
+          Меня можно найти в соц-сетях
         </p>
         <ul class="flex gap-4 sm:gap-8">
           <a

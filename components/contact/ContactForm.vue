@@ -7,11 +7,10 @@ const messageStatus = ref(false);
 const isDisabledButton = ref(false);
 
 const forms = reactive({
-  userName: "Nicfffk",
-  userEmail: "tnrvlg@gmail.com",
-  userPhone: "+7 (896) 166-54-41",
-  userMessage:
-    "loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem",
+  userName: "",
+  userEmail: "",
+  userPhone: "",
+  userMessage: "",
 });
 
 const rules = {
@@ -28,13 +27,10 @@ const rules = {
 const v$ = useVuelidate(rules, forms);
 
 async function addUserInfo(event) {
-  console.log("v$", v$);
   const isFormCorrect = await v$.value.$validate();
   if (!isFormCorrect) return;
 
   isDisabledButton.value = true;
-
-  console.log("forms", forms);
 
   await addBid(forms, (res) => {
     showResult.value = true;
@@ -69,29 +65,29 @@ async function addUserInfo(event) {
       <p
         class="font-roboto-medium text-primary-dark dark:text-primary-light text-2xl mb-8"
       >
-        Contact Form
+        Контактная форма
       </p>
       <form class="font-roboto-regular space-y-7">
         <div class="">
           <label
             class="block text-lg text-primary-dark dark:text-primary-light mb-2"
             for="name"
-            >Full Name
+            >Имя
             <span
               v-if="v$.userName.$dirty && v$.userName.required.$invalid"
               class="text-red-600"
-              >error empty</span
+              >Поле Имя не может быть пустым</span
             ></label
           >
           <span
             v-if="v$.userName.$dirty && v$.userName.minLength.$invalid"
             class="text-red-600"
-            >error low</span
+            >Недостаточно символов ({{  forms.userName.length  }} / {{ v$.userName.minLength.$params.min }})</span
           >
           <span
             v-if="v$.userName.$dirty && v$.userName.maxLength.$invalid"
             class="text-red-600"
-            >error high</span
+            >Слишком много символов ({{  forms.userName.length  }} / {{ v$.userName.maxLength.$params.max }})</span
           >
           <input
             v-model="forms.userName"
@@ -105,7 +101,7 @@ async function addUserInfo(event) {
             name="name"
             type="text"
             required=""
-            placeholder="Your Name"
+            placeholder="Ваше Имя"
             aria-label="Name"
           />
         </div>
@@ -118,12 +114,12 @@ async function addUserInfo(event) {
             <span
               v-if="v$.userEmail.$dirty && v$.userEmail.required.$invalid"
               class="text-red-600"
-              >error empty</span
+              >Поле Email не может быть пустым</span
             >
             <span
               v-if="v$.userEmail.$dirty && v$.userEmail.email.$invalid"
               class="text-red-600"
-              >error not email</span
+              >Не валидный Email</span
             ></label
           >
           <input
@@ -137,8 +133,7 @@ async function addUserInfo(event) {
             id="email"
             name="email"
             type="email"
-            required=""
-            placeholder="Your Email"
+            placeholder="Ваш Email"
             aria-label="Email"
           />
         </div>
@@ -147,21 +142,21 @@ async function addUserInfo(event) {
           <label
             class="block text-lg text-primary-dark dark:text-primary-light mb-2"
             for="phone"
-            >Phone
+            >Телефон
             <span
               v-if="v$.userPhone.$dirty && v$.userPhone.required.$invalid"
               class="text-red-600"
-              >error empty</span
+              >Поле Телефон не может быть пустым</span
             >
             <span
               v-if="v$.userPhone.$dirty && v$.userPhone.minLength.$invalid"
               class="text-red-600"
-              >error low</span
+              >Недостаточно символов ({{  forms.userPhone.length  }} / {{ v$.userPhone.minLength.$params.min }})</span
             >
             <span
               v-if="v$.userPhone.$dirty && v$.userPhone.maxLength.$invalid"
               class="text-red-600"
-              >error high</span
+              >Слишком много символов ({{  forms.userPhone.length  }} / {{ v$.userPhone.maxLength.$params.max }})</span
             >
           </label>
           <input
@@ -178,7 +173,7 @@ async function addUserInfo(event) {
             name="phone"
             type="text"
             required=""
-            placeholder="Your Phone"
+            placeholder="Ваш телефон"
             aria-label="Phone"
           />
         </div>
@@ -187,21 +182,21 @@ async function addUserInfo(event) {
           <label
             class="block text-lg text-primary-dark dark:text-primary-light mb-2"
             for="message"
-            >Message
+            >Сообщение
             <span
               v-if="v$.userMessage.$dirty && v$.userMessage.required.$invalid"
               class="text-red-600"
-              >error empty</span
+              >Сообщение не может быть пустым</span
             >
             <span
               v-if="v$.userMessage.$dirty && v$.userMessage.minLength.$invalid"
               class="text-red-600"
-              >error low</span
+              >Недостаточно символов ({{  forms.userMessage.length  }} / {{ v$.userMessage.minLength.$params.min }})</span
             >
             <span
               v-if="v$.userMessage.$dirty && v$.userMessage.maxLength.$invalid"
               class="text-red-600"
-              >error high</span
+              >Слишком много символов ({{  forms.userMessage.length  }} / {{ v$.userMessage.maxLength.$params.max }})</span
             >
           </label>
           <textarea
@@ -217,10 +212,10 @@ async function addUserInfo(event) {
             cols="14"
             rows="6"
             aria-label="Message"
-            placeholder="Project description"
+            placeholder="Опишите задачу"
           ></textarea>
         </div>
-
+        <NuxtLink to="agreement" target="_blank" class="font-roboto-regular text-primary-dark dark:text-primary-light underline underline-offset-8">Согласие на обработку персональных данных</NuxtLink>
         <div class="mt-6">
           <ReusableButton
             @click.prevent="addUserInfo"

@@ -12,7 +12,7 @@ onMounted(() => {
   let tagCloudOptions = {
     radius: tagCloudRadius,
     itemClass:
-      "transition-colors transition-duration-500 text-primary-dark hover:text-indigo-500 dark:text-primary-light dark:hover:text-indigo-500",
+      "cursor-pointer transition-colors transition-duration-500 text-primary-dark hover:text-indigo-500 dark:text-primary-light dark:hover:text-indigo-500",
   };
 
   let tagcloud = new TagCloud(
@@ -23,9 +23,6 @@ onMounted(() => {
 
   window.addEventListener("resize", () => {
     tagCloudRadius = document.body.clientWidth >= 600 ? 300 : 160
-    console.log("resize");
-    console.log("tagCloudOptions", tagCloudOptions);
-    console.log("tagCloudRadius", tagCloudRadius);
     tagcloud.destroy();
     tagCloudOptions.radius = tagCloudRadius
     tagcloud = new TagCloud(tagCloudContainer, tagCloudTexts, tagCloudOptions);

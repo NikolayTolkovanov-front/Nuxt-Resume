@@ -36,7 +36,6 @@ const rules = {
 const v$ = useVuelidate(rules, forms);
 
 async function addUserInfo(event) {
-  console.log("v$", v$);
   const isFormCorrect = await v$.value.$validate();
   if (!isFormCorrect) return;
 
@@ -104,7 +103,7 @@ function closeModal() {
                 class="modal-header flex justify-between gap-10 p-5 border-b border-ternary-light dark:border-ternary-dark"
               >
                 <h5 class="text-primary-dark dark:text-primary-light text-xl">
-                  What project are you looking for?
+                  Введите ваши данные и мы сможем сотрудничать с вами, решим ваши проблемы
                 </h5>
                 <button
                   class="px-4 flex items-center text-primary-dark dark:text-primary-light"
@@ -122,13 +121,13 @@ function closeModal() {
                     <label
                       class="block text-lg text-primary-dark dark:text-primary-light mb-2"
                       for="name"
-                      >Full Name
+                      >Имя
                       <span
                         v-if="
                           v$.userName.$dirty && v$.userName.required.$invalid
                         "
                         class="text-red-600"
-                        >error empty</span
+                        >Поле Имя не может быть пустым</span
                       ></label
                     >
                     <span
@@ -136,14 +135,14 @@ function closeModal() {
                         v$.userName.$dirty && v$.userName.minLength.$invalid
                       "
                       class="text-red-600"
-                      >error low</span
+                      >Недостаточно символов ({{  forms.userName.length  }} / {{ v$.userName.minLength.$params.min }})</span
                     >
                     <span
                       v-if="
                         v$.userName.$dirty && v$.userName.maxLength.$invalid
                       "
                       class="text-red-600"
-                      >error high</span
+                      >Слишком много символов ({{  forms.userName.length  }} / {{ v$.userName.maxLength.$params.max }})</span
                     >
                     <input
                       v-model="forms.userName"
@@ -156,7 +155,7 @@ function closeModal() {
                       id="name"
                       name="name"
                       type="text"
-                      placeholder="Name"
+                      placeholder="Ваше Имя"
                       aria-label="Name"
                     />
                   </div>
@@ -170,14 +169,14 @@ function closeModal() {
                           v$.userEmail.$dirty && v$.userEmail.required.$invalid
                         "
                         class="text-red-600"
-                        >error empty</span
+                        >Поле Email не может быть пустым</span
                       >
                       <span
                         v-if="
                           v$.userEmail.$dirty && v$.userEmail.email.$invalid
                         "
                         class="text-red-600"
-                        >error not email</span
+                        >Не валидный Email</span
                       ></label
                     >
                     <input
@@ -191,7 +190,7 @@ function closeModal() {
                       id="email"
                       name="email"
                       type="text"
-                      placeholder="Email"
+                      placeholder="Ваш Email"
                       aria-label="Email"
                     />
                   </div>
@@ -199,27 +198,27 @@ function closeModal() {
                     <label
                       class="block text-lg text-primary-dark dark:text-primary-light mb-2"
                       for="phone"
-                      >Phone
+                      >Телефон
                       <span
                         v-if="
                           v$.userPhone.$dirty && v$.userPhone.required.$invalid
                         "
                         class="text-red-600"
-                        >error empty</span
+                        >Поле Телефон не может быть пустым</span
                       >
                       <span
                         v-if="
                           v$.userPhone.$dirty && v$.userPhone.minLength.$invalid
                         "
                         class="text-red-600"
-                        >error low</span
+                        >Недостаточно символов ({{  forms.userPhone.length  }} / {{ v$.userPhone.minLength.$params.min }})</span
                       >
                       <span
                         v-if="
                           v$.userPhone.$dirty && v$.userPhone.maxLength.$invalid
                         "
                         class="text-red-600"
-                        >error high</span
+                        >Слишком много символов ({{  forms.userPhone.length  }} / {{ v$.userPhone.maxLength.$params.max }})</span
                       >
                     </label>
                     <input
@@ -235,7 +234,7 @@ function closeModal() {
                       id="phone"
                       name="phone"
                       type="text"
-                      placeholder="Your Phone"
+                      placeholder="Ваш телефон"
                       aria-label="Phone"
                     />
                   </div>
@@ -243,14 +242,14 @@ function closeModal() {
                     <label
                       class="block text-lg text-primary-dark dark:text-primary-light mb-2"
                       for="message"
-                      >Message
+                      >Сообщение
                       <span
                         v-if="
                           v$.userMessage.$dirty &&
                           v$.userMessage.required.$invalid
                         "
                         class="text-red-600"
-                        >error empty</span
+                        >Сообщение не может быть пустым</span
                       >
                       <span
                         v-if="
@@ -258,7 +257,7 @@ function closeModal() {
                           v$.userMessage.minLength.$invalid
                         "
                         class="text-red-600"
-                        >error low</span
+                        >Недостаточно символов ({{  forms.userMessage.length  }} / {{ v$.userMessage.minLength.$params.min }})</span
                       >
                       <span
                         v-if="
@@ -266,7 +265,7 @@ function closeModal() {
                           v$.userMessage.maxLength.$invalid
                         "
                         class="text-red-600"
-                        >error high</span
+                        >Слишком много символов ({{  forms.userMessage.length  }} / {{ v$.userMessage.maxLength.$params.max }})</span
                       >
                     </label>
                     <textarea
@@ -282,9 +281,10 @@ function closeModal() {
                       cols="14"
                       rows="6"
                       aria-label="Details"
-                      placeholder="Project description"
+                      placeholder="Опишите задачу"
                     ></textarea>
                   </div>
+                  <NuxtLink to="agreement" target="_blank" class="font-roboto-regular text-primary-dark dark:text-primary-light underline underline-offset-8">Согласие на обработку персональных данных</NuxtLink>
                   <div class="mt-6 pb-4 sm:pb-1">
                     <ReusableButton
                       title="Отправить"

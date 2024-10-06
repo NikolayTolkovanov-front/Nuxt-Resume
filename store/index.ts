@@ -7,517 +7,447 @@ export const useMainStore = defineStore("main", {
     projectsFilterHeading: "Поиск проектов по названию и категории",
     noProjectsText: "Нет проектов :(",
     projects: [
+      // Moreodor
       {
         id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdb",
         title: "Moreodor",
         category_id: 2,
-        img: "images/web-project-2.jpg",
-        publishDate: "Nov 04, 2021",
-        tag: "UI / Frontend",
-        clientTitle: "About Client",
-        objectivesTitle: "Objective",
+        img: "images/projects/moreodor/intro.png",
+        publishDate: "04.11.2021",
+        tag: "Frontend / Backend",
         objectivesDetails:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.",
-        techTitle: "Tools & Technologies",
-        detailsTitle: "Challenge",
-        socialTitle: "Share This",
+          "Создание современного и удобного интернет-магазина для продажи свежих продуктов и морепродуктов, предоставляющего пользователям простой и интуитивный интерфейс для совершения покупок онлайн.",
         projectImages: [
           {
             id: uuidv4(),
-            title: "Uber Project Management UI",
-            img: "../images/ui-project-1.jpg",
+            title: "Главная страница",
+            img: "../images/projects/moreodor/img1.png",
           },
           {
             id: uuidv4(),
-            title: "Uber Project Management UI",
-            img: "../images/web-project-1.jpg",
+            title: "Пример страницы сайта",
+            img: "../images/projects/moreodor/img2.png",
           },
           {
             id: uuidv4(),
-            title: "Uber Project Management UI",
-            img: "../images/web-project-2.jpg",
+            title: "Пример страницы каталога",
+            img: "../images/projects/moreodor/img3.png",
           },
         ],
-        companyInfos: [
-          {
-            id: uuidv4(),
-            title: "Name",
-            details: "Company Ltd",
-          },
-          {
-            id: uuidv4(),
-            title: "Services",
-            details: "UI Design & Frontend Development",
-          },
-          {
-            id: uuidv4(),
-            title: "Website",
-            details: "https://company.com",
-          },
-          {
-            id: uuidv4(),
-            title: "Phone",
-            details: "555 8888 888",
-          },
-        ],
-        technologies: [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Nuxt.js",
-          "TailwindCSS",
-          "AdobeXD",
-        ],
+        technologies: ["Vue.js", "Django", "Django REST Framework"],
+        siteLink: "https://www.moreodor.ru",
         projectDetails: [
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
+              "В условиях растущей конкуренции на рынке продовольственных товаров и морепродуктов, компания решила внедрить инновационное решение для онлайн-продаж, позволяющее не только привлечь новых клиентов, но и удержать существующих за счет улучшения пользовательского опыта. Для реализации этой цели был выбран технологический стэк, включающий фронтенд на Vue.js и бэкенд на Django с использованием Django REST Framework.",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
+              "Изначально сайт создавался на 1С Битрикс, но из-за отсутствия необходимых функций в данной технологии, решили поменять стэк, благодаря чему увеличили гибкость системы.",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
+              "Так как функционал сайта достаточно большой, функционал реализовывался модульно(с необходимым уровнем связанности и изоляцией), чтобы можно было заменять логику, минимально затрагивая другие части сайта.",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
+              "Реализация интернет-магазина продуктов и морепродуктов позволила заказчику существенно улучшить клиентский опыт и увеличить объемы продаж. Проект принес значительную пользу как для бизнеса, так и для пользователей, предлагая современное, удобное и безопасное решение для онлайн-покупок. Интернет-магазин продолжает развиваться и увеличивать функционал.",
           },
         ],
       },
+      // Bescargo
       {
-        id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdc",
-        title: "Phoenix Digital Agency",
-        category_id: 1,
-        img: "images/mobile-project-2.jpg",
-        publishDate: "Nov 04, 2021",
-        tag: "UI / Frontend",
-        clientTitle: "About Client",
-        objectivesTitle: "Objective",
-        objectivesDetails:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.",
-        techTitle: "Tools & Technologies",
-        detailsTitle: "Challenge",
-        socialTitle: "Share This",
-        projectImages: [
-          {
-            id: uuidv4(),
-            title: "Phoenix Digital Agency",
-            img: "../images/mobile-project-1.jpg",
-          },
-          {
-            id: uuidv4(),
-            title: "Phoenix Digital Agency",
-            img: "../images/web-project-2.jpg",
-          },
-          {
-            id: uuidv4(),
-            title: "Phoenix Digital Agency",
-            img: "../images/mobile-project-2.jpg",
-          },
-        ],
-        companyInfos: [
-          {
-            id: uuidv4(),
-            title: "Name",
-            details: "Company Ltd",
-          },
-          {
-            id: uuidv4(),
-            title: "Services",
-            details: "UI Design & Frontend Development",
-          },
-          {
-            id: uuidv4(),
-            title: "Website",
-            details: "https://company.com",
-          },
-          {
-            id: uuidv4(),
-            title: "Phone",
-            details: "555 8888 888",
-          },
-        ],
-        technologies: [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Nuxt.js",
-          "TailwindCSS",
-          "AdobeXD",
-        ],
-        projectDetails: [
-          {
-            id: uuidv4(),
-            details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
-          },
-          {
-            id: uuidv4(),
-            details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
-          },
-          {
-            id: uuidv4(),
-            details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
-          },
-          {
-            id: uuidv4(),
-            details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
-          },
-        ],
-      },
-      {
-        id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdy",
-        title: "Project Management UI",
-        category_id: 1,
-        img: "images/ui-project-1.jpg",
-        publishDate: "Nov 04, 2021",
-        tag: "UI / Frontend",
-        clientTitle: "About Client",
-        objectivesTitle: "Objective",
-        objectivesDetails:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.",
-        techTitle: "Tools & Technologies",
-        detailsTitle: "Challenge",
-        socialTitle: "Share This",
-        projectImages: [
-          {
-            id: uuidv4(),
-            title: "Project Management UI",
-            img: "../images/mobile-project-1.jpg",
-          },
-          {
-            id: uuidv4(),
-            title: "Project Management UI",
-            img: "../images/web-project-2.jpg",
-          },
-          {
-            id: uuidv4(),
-            title: "Project Management UI",
-            img: "../images/mobile-project-2.jpg",
-          },
-        ],
-        companyInfos: [
-          {
-            id: uuidv4(),
-            title: "Name",
-            details: "Company Ltd",
-          },
-          {
-            id: uuidv4(),
-            title: "Services",
-            details: "UI Design & Frontend Development",
-          },
-          {
-            id: uuidv4(),
-            title: "Website",
-            details: "https://company.com",
-          },
-          {
-            id: uuidv4(),
-            title: "Phone",
-            details: "555 8888 888",
-          },
-        ],
-        technologies: [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Nuxt.js",
-          "TailwindCSS",
-          "AdobeXD",
-        ],
-        projectDetails: [
-          {
-            id: uuidv4(),
-            details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
-          },
-          {
-            id: uuidv4(),
-            details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
-          },
-          {
-            id: uuidv4(),
-            details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
-          },
-          {
-            id: uuidv4(),
-            details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
-          },
-        ],
-      },
-      {
-        id: "260d1271-f1f2-4bc9-a5eb-05a89c8ccc99",
-        title: "Cloud Storage Platform",
+        id: "3504465f-af58-4bdf-907f-63401d309171",
+        title: "Bescargo",
         category_id: 2,
-        img: "images/ui-project-2.jpg",
-        publishDate: "Nov 04, 2021",
-        tag: "Web / Frontend",
-        clientTitle: "About Client",
-        objectivesTitle: "Objective",
+        img: "images/projects/bescargo/intro.png",
+        publishDate: "04.11.2021",
+        tag: "Frontend / Backend",
         objectivesDetails:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.",
-        techTitle: "Tools & Technologies",
-        detailsTitle: "Challenge",
-        socialTitle: "Share This",
+          "Разработка административной панели для сайта таможенного представителя и логистического оператора БЭС КАРГО.",
         projectImages: [
           {
             id: uuidv4(),
-            title: "Cloud Storage Platform",
-            img: "../images/web-project-1.jpg",
+            title: "Таблица заказов",
+            img: "../images/projects/bescargo/img1.png",
           },
           {
             id: uuidv4(),
-            title: "Cloud Storage Platform",
-            img: "../images/web-project-2.jpg",
+            title: "Административная панель",
+            img: "../images/projects/bescargo/img2.png",
           },
           {
             id: uuidv4(),
-            title: "Cloud Storage Platform",
-            img: "../images/mobile-project-2.jpg",
+            title: "Вход в административную панель",
+            img: "../images/projects/bescargo/img3.png",
           },
         ],
-        companyInfos: [
-          {
-            id: uuidv4(),
-            title: "Name",
-            details: "Company Ltd",
-          },
-          {
-            id: uuidv4(),
-            title: "Services",
-            details: "UI Design & Frontend Development",
-          },
-          {
-            id: uuidv4(),
-            title: "Website",
-            details: "https://company.com",
-          },
-          {
-            id: uuidv4(),
-            title: "Phone",
-            details: "555 8888 888",
-          },
-        ],
-        technologies: [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Nuxt.js",
-          "TailwindCSS",
-          "AdobeXD",
-        ],
+        technologies: ["Vue.js", "PHP"],
+        siteLink: "https://bescargo.ru",
         projectDetails: [
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
+              "В рамках проекта для компании БЭС КАРГО, специализирующейся на грузоперевозках, была поставлена задача создать админ-панель для управления сайтом bescargo.ru. Основной целью было разработать удобный и интуитивно понятный интерфейс для администраторов сайта, который позволит эффективно смотреть и управлять заказами и сотрудниками(в режиме администратора).",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
+              "Для фронтенда был выбран стек Vue.js(Этот фреймворк был выбран за его легкость, гибкость и высокую производительность. Он позволяет создавать динамичные и отзывчивые интерфейсы с минимальными затратами времени на разработку), а для бэкенда использовался уже существующий API, написанный на PHP, что облегчило интеграцию с новой админ-панелью, так как почти не потребовалось переписывать существующий код.",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
+              "Основная проблема заключалась в совместимости с существующим API. Интерфейс был написан на PHP, и его структура не всегда соответствовала лучшим практикам для RESTful API, что затрудняло интеграцию с логикой фронтенда. В результате были внесены изменения в структуру запросов и ответов.",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
+              "Задача по созданию админ-панели для сайта bescargo.ru была успешно выполнена в срок. Итоговый продукт представляет собой высокопроизводительную и удобную в использовании админ-панель, полностью интегрированную с существующим бэкендом на PHP. В результате компания БЭС КАРГО получила инструмент, значительно упрощающий управление сайтом, что позволяет оптимизировать внутренние процессы и улучшить качество обслуживания клиентов.",
           },
         ],
       },
+      // Angie
       {
-        id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccdm",
-        title: "Uber Social App",
+        id: "686ba77b-4918-4bc8-b128-56287d385997",
+        title: "Angie",
         category_id: 2,
-        img: "images/mobile-project-1.jpg",
-        publishDate: "Nov 04, 2021",
-        tag: "UI / Mobile",
-        clientTitle: "About Client",
-        objectivesTitle: "Objective",
+        img: "images/projects/angie/intro.png",
+        publishDate: "04.11.2021",
+        tag: "Frontend",
         objectivesDetails:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.",
-        techTitle: "Tools & Technologies",
-        detailsTitle: "Challenge",
-        socialTitle: "Share This",
+          "Разработка многоязычного сайт-документацию на Sphinx для компании ООО Веб Сервер, обеспечивающий разнообразие отображения контента и удобство использования. Сайт должен поддерживать как русский, так и английский языки.",
         projectImages: [
           {
             id: uuidv4(),
-            title: "Uber Social App",
-            img: "../images/web-project-1.jpg",
+            title: "Главная страница",
+            img: "../images/projects/angie/img1.png",
           },
           {
             id: uuidv4(),
-            title: "Uber Social App",
-            img: "../images/web-project-2.jpg",
+            title: "Страница установки",
+            img: "../images/projects/angie/img2.png",
           },
           {
             id: uuidv4(),
-            title: "Uber Social App",
-            img: "../images/mobile-project-2.jpg",
+            title: "Пример шапки сайта",
+            img: "../images/projects/angie/img3.png",
           },
         ],
-        companyInfos: [
-          {
-            id: uuidv4(),
-            title: "Name",
-            details: "Company Ltd",
-          },
-          {
-            id: uuidv4(),
-            title: "Services",
-            details: "UI Design & Frontend Development",
-          },
-          {
-            id: uuidv4(),
-            title: "Website",
-            details: "https://company.com",
-          },
-          {
-            id: uuidv4(),
-            title: "Phone",
-            details: "555 8888 888",
-          },
-        ],
-        technologies: [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Nuxt.js",
-          "TailwindCSS",
-          "AdobeXD",
-        ],
+        technologies: ["Sphinx Framework", "python"],
+        siteLink: "https://angie.software",
         projectDetails: [
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
+              "Компания ООО Веб Сервер обратилась с запросом на создание сайта-документации для проекта Angie. Основными требованиями были поддержка русского и английского языков, разнообразие отображаемого контента и удобство использования сайта.",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
+              "В качестве технологии был выбран Sphinx, мощный инструмент для генерации документации, благодаря его гибкости, поддержке многоязычности и возможности интеграции с различными форматами контента.",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
+              "Для мультиязычности решили не использовать встроенные инструменты, а просто создавать отдельные папки для языков, чтобы получить большую гибкость при написании контента. Также за основу взяли тему-плагин PyData, чтобы выиграть время за счёт минимальной необходимости изменять стили.",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
+              "Проект по разработке сайта-документации для компании ООО Веб Сервер был успешно завершен в срок. Итоговый продукт представляет собой многоязычный, функциональный сайт с удобной навигацией и разнообразным отображением контента, который полностью отвечает требованиям заказчика. В настоящее время ведутся работы по редизайну сайта и добавлению новых функций, что позволит еще больше улучшить пользовательский опыт и повысить качество предоставляемой информации.",
           },
         ],
       },
+      // Resetly
       {
-        id: "260d1271-f1f2-4bc9-a5eb-05a89c8cccbb",
-        title: "Apple Design System",
-        category_id: 1,
-        img: "images/web-project-1.jpg",
-        publishDate: "Nov 04, 2021",
-        tag: "UI / Mobile",
-        clientTitle: "About Client",
-        objectivesTitle: "Objective",
+        id: "c4fe9ff3-166a-4b62-a5de-60f496a542f9",
+        title: "Resetly",
+        category_id: 2,
+        img: "images/projects/resetly/intro.png",
+        publishDate: "04.11.2021",
+        tag: "Frontend / Backend",
         objectivesDetails:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus! Quibusdam enim quod in esse, mollitia molestias incidunt quas ipsa accusamus veniam.",
-        techTitle: "Tools & Technologies",
-        detailsTitle: "Challenge",
-        socialTitle: "Share This",
+          "Разработка многостраничного сайта для компании Relocator io Inc с уклоном на мультиязычность, уникальный дизайн и seo-оптимизацию.",
         projectImages: [
           {
             id: uuidv4(),
-            title: "Apple Design System",
-            img: "../images/web-project-1.jpg",
+            title: "Главная страница",
+            img: "../images/projects/resetly/img1.png",
           },
           {
             id: uuidv4(),
-            title: "Apple Design System",
-            img: "../images/web-project-2.jpg",
+            title: "Блок отзывов на странице",
+            img: "../images/projects/resetly/img2.png",
           },
           {
             id: uuidv4(),
-            title: "Apple Design System",
-            img: "../images/mobile-project-2.jpg",
+            title: "Блок истории перездов на странице",
+            img: "../images/projects/resetly/img3.png",
           },
         ],
-        companyInfos: [
-          {
-            id: uuidv4(),
-            title: "Name",
-            details: "Company Ltd",
-          },
-          {
-            id: uuidv4(),
-            title: "Services",
-            details: "UI Design & Frontend Development",
-          },
-          {
-            id: uuidv4(),
-            title: "Website",
-            details: "https://company.com",
-          },
-          {
-            id: uuidv4(),
-            title: "Phone",
-            details: "555 8888 888",
-          },
-        ],
-        technologies: [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Nuxt.js",
-          "TailwindCSS",
-          "AdobeXD",
-        ],
+        technologies: ["Nuxt.js", "Django REST Framework"],
+        siteLink: "https://resetly.io",
         projectDetails: [
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
+              "В рамках проекта по созданию многостраничного сайта для релокации в Европу из любой точки мира была поставлена задача разработать сайт resetly.io. Основная цель проекта заключалась в предоставлении пользователям возможности получения полной информации и помощи в процессе релокации, с поддержкой на русском и английском языках. Особое внимание было уделено уникальному и анимированному дизайну, а также оптимизации для поисковых систем (SEO).",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
+              "В рамках стэка выбрали Nuxt.js(за возможность работы с SSR, что значительно улучшает seo) и Django REST Framework(надёжность безопасность и удобство в разработке API)",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
+              "Во время разработки возникли следующие проблемы: Анимации и производительность(уникальный и анимированный дизайн требовал тщательной оптимизации, чтобы не снижать производительность сайта.), мультиязычность: реализация перевода сайта на русский и английский языки требовала обеспечения корректной работы интерфейса и контента на обоих языках, а также seo-оптимизация: обеспечение высоких показателей SEO при использовании динамического контента оказалось непростой задачей. Благодаря оптимизированным библиотекам и встроенным модулям Nuxt.js удалось решить все проблемы.",
           },
           {
             id: uuidv4(),
             details:
-              "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
+              "Проект по разработке многостраничного сайта resetly.io был успешно завершен в срок. Итоговый продукт представляет собой высокопроизводительный, мультиязычный сайт с уникальным анимированным дизайном и отличной SEO-оптимизацией. Компания получила инструмент, значительно улучшающий пользовательский опыт и увеличивающий видимость в поисковых системах, что способствует привлечению новых клиентов и укреплению позиций на рынке услуг по релокации.",
+          },
+        ],
+      },
+      // GR
+      {
+        id: "8a5575a7-9de9-4482-b1ac-3048fcea3c8b",
+        title: "G&R",
+        category_id: 2,
+        img: "images/projects/g&r/intro.png",
+        publishDate: "04.11.2021",
+        tag: "UI / UX / Frontend",
+        objectivesDetails:
+          "Создание вёрстки макетов для многостраничного сайта с многочисленными анимациями и повторяющимися блоками, обеспечив их корректное отображение на различных страницах и устройствах. Работа включала реализацию адаптивного дизайна.",
+        projectImages: [
+          {
+            id: uuidv4(),
+            title: "Страница публикаций",
+            img: "../images/projects/g&r/img1.png",
+          },
+          {
+            id: uuidv4(),
+            title: "Страница отдельной публикации",
+            img: "../images/projects/g&r/img2.png",
+          },
+          {
+            id: uuidv4(),
+            title: "Страница авито",
+            img: "../images/projects/g&r/img3.png",
+          },
+        ],
+        technologies: ["HTML5", "CSS3", "Javascript"],
+        siteLink: "https://gracie.digital",
+        projectDetails: [
+          {
+            id: uuidv4(),
+            details:
+              "Задача состояла в том, чтобы сверстать многостраничный сайт Gracie Digital, который имеет необычный и уникальный дизайн с множеством страниц. Для реализации проекта использовались технологии HTML, CSS (включая препроцессоры, такие как SCSS), и JavaScript, чтобы обеспечить высокую производительность и гибкость.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Благодаря большому опыту в разработке сайтов и приложений, выполнить данную задачу не составило труда. Использование CSS-анимаций и переходов помогло для достижения плавного эффекта с минимальными затратами ресурсов. JavaScript использовался для сложных интерактивных анимаций, с учетом оптимизации для производительности.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Также был реалилзован компонентный подход: создание повторяющихся блоков в виде компонентов с использованием SCSS и модульного JavaScript, что позволило обеспечить единообразие и упрощенную поддержку кода.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Задача по вёрстке макетов для многостраничного сайта Gracie Digital была успешно выполнена за срок в 1 неделю. Проект был реализован с высоким уровнем детализации и интерактивности, обеспечивая при этом отличное отображение на всех типах устройств.",
+          },
+        ],
+      },
+      // Tattoofeel
+      {
+        id: "4677684c-c972-49b8-91a2-7680c2985e14",
+        title: "Tattoofeel",
+        category_id: 2,
+        img: "images/projects/tattoofeel/intro.png",
+        publishDate: "04.11.2021",
+        tag: "Frontend / Backend",
+        objectivesDetails:
+          "Разработка интернет-магазина для тату-студии ТАТУСТУДИЯ, в который входило создание блога, каталог товаров, личного кабинета для пользователей, а также корзины, оформления заказа и т.п.",
+        projectImages: [
+          {
+            id: uuidv4(),
+            title: "Блок товаров на странице",
+            img: "../images/projects/tattoofeel/img1.png",
+          },
+          {
+            id: uuidv4(),
+            title: "Страница каталога товаров",
+            img: "../images/projects/tattoofeel/img2.png",
+          },
+          {
+            id: uuidv4(),
+            title: "Страница входа в личный кабинет",
+            img: "../images/projects/tattoofeel/img3.png",
+          },
+        ],
+        technologies: ["jQuery", "Yii2"],
+        siteLink: "https://tattoofeel.ru",
+        projectDetails: [
+          {
+            id: uuidv4(),
+            details:
+              "Задача состояла в создании функционального и привлекательного интернет-магазина, который бы включал такой функционал, как блог, каталог с товарами, личный кабинет и оформление заказов. Для этого использовались jQuery и Yii2. Выбор стека был обусловлен его мощностью и гибкостью: Yii2 предоставляет надежную архитектуру для разработки сложных веб-приложений, а jQuery обеспечивает интерактивность и динамичность пользовательского интерфейса.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Внедрение CMS на основе Yii2 позволило легко создавать и управлять постами, включая категории и теги для улучшения навигации и SEO, а также позволило разработать функционал личного кабинета с использованием безопасных методов аутентификации и хранения данных, обеспечивая защиту персональной информации пользователей.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Был реализован удобный интерфейсс корзины с использованием jQuery для динамического обновления и проверки данных, а также интеграция с платежными системами для безопасного оформления заказа.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Разработана система управления товарами с использованием Yii2, позволяющая администраторам легко добавлять, редактировать и удалять товары, а также управлять их категориями и атрибутами.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Проект по созданию интернет-магазина был успешно завершен в срок за 6 месяцев. Разработанное решение включает все необходимые функциональные элементы, обеспечивая пользователям удобный доступ к товарам и услугам студии, а также простой и безопасный процесс покупки. В результате, TattooFeel получил современный и функциональный интернет-магазин, который способствует увеличению продаж и улучшению клиентского опыта.",
+          },
+        ],
+      },
+      // Naraada
+      {
+        id: "92b089bc-6f43-4b76-a598-1be36d40d59f",
+        title: "Naraada",
+        category_id: 2,
+        img: "images/projects/naraada/intro.png",
+        publishDate: "04.11.2021",
+        tag: "Frontend",
+        objectivesDetails:
+          "Адаптивная и кроссбарзерная вёрстка макетов сайта для бронирования номеров с уклоном на perfect pixel.",
+        projectImages: [
+          {
+            id: uuidv4(),
+            title: "Главная страница",
+            img: "../images/projects/naraada/img1.png",
+          },
+          {
+            id: uuidv4(),
+            title: "Пример блока преимущества",
+            img: "../images/projects/naraada/img2.png",
+          },
+          {
+            id: uuidv4(),
+            title: "Пример блока преимущества",
+            img: "../images/projects/naraada/img3.png",
+          },
+        ],
+        technologies: ["HTML5", "CSS3", "Javascript"],
+        siteLink: "https://naraada.ru",
+        projectDetails: [
+          {
+            id: uuidv4(),
+            details:
+              "Проект по разработке сайта для Naraada требовал создания визуально привлекательного и функционального веб-сайта с уникальными анимациями и относительно сложной структурой.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Библиотеки swiper.js и gsap позволили добиться необходимых визуальных эффектов и получить функциональность без высокой потери в производительности.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Благодаря медиа запросам и сеткам css удалось добиться того, что сайт выглядит отлично на всех устройствах, от мобильных телефонов до настольных компьютеров.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Также был реализован функционал выбора даты заезда и валидация свободных номеров, чтобы не произошло ошибки с бронированием.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Задача была успешно решена в течение трех недель. Сайт Naraada был сверстан и запущен, предоставляя пользователям уникальный и интерактивный опыт. Благодаря продуманной реализации и оптимизации, сайт демонстрирует высокую производительность и адаптивность на всех устройствах.",
+          },
+        ],
+      },
+      // Nimble
+      {
+        id: "8bdd7820-8e24-4984-a0be-1ab679f8486f",
+        title: "Nimble",
+        category_id: 1,
+        img: "images/projects/nimble/intro.png",
+        publishDate: "04.11.2021",
+        tag: "Frontend",
+        objectivesDetails:
+          "Адаптивная и кроссбарзерная вёрстка страницы для сайта криптовалют.",
+        projectImages: [
+          {
+            id: uuidv4(),
+            title: "Главная страница",
+            img: "../images/projects/nimble/img1.png",
+          },
+          {
+            id: uuidv4(),
+            title: "Пример блока преимущества",
+            img: "../images/projects/nimble/img2.png",
+          },
+          {
+            id: uuidv4(),
+            title: "Пример блока преимущества",
+            img: "../images/projects/nimble/img3.png",
+          },
+        ],
+        technologies: ["HTML5", "CSS3", "Javascript"],
+        siteLink: "https://landing-nimble.github.io",
+        projectDetails: [
+          {
+            id: uuidv4(),
+            details:
+              "Задача - создать визуально привлекательный и современный сайт для криптовалют с использованием анимаций и векторной графики.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Использование CSS-анимаций и keyframes для создания плавных и эффективных анимированных градиентов позволило избежать излишнего использования JavaScript и улучшить производительность.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Тестирование и настройка кода для обеспечения кросс-браузерной совместимости включало использование полифилов и CSS-префиксов для поддержки старых версий браузеров.",
+          },
+          {
+            id: uuidv4(),
+            details:
+              "Задача была успешно решена в течении недели. Свёрстанный макет был отдан клиенту, который оценил работу, подчёркивая современный и анимированный интерфейс и удобное использование.",
           },
         ],
       },
     ],
+    projectsSidebarInfo: {
+      siteLinkTitle: "Ссылка на проект",
+      objectivesTitle: "Кратко о задаче",
+      techTitle: "Технологии",
+      detailsTitle: "Задача",
+      socialTitle: "Поделиться",
+    },
     technologies: [
       "HTML5",
       "CSS3",
       "JavaScript",
       "Python",
       "PHP",
+      "Laravel",
       "Vue.js",
       "Vuex",
       "Pinia",
@@ -528,12 +458,12 @@ export const useMainStore = defineStore("main", {
       "Sphinx",
       "Node.js",
       "Express.js",
-      "Wordpress",
       "Tailwind.css",
       "Bootstrap.css",
       "Docker",
       "Jenkins",
       "MySQL",
+      "Git"
     ],
     relatedProjectsHeading: "Похожие проекты",
     technologiesHeading: "Технологии, с которыми работаю",
@@ -541,11 +471,11 @@ export const useMainStore = defineStore("main", {
     aboutMe: [
       {
         id: uuidv4(),
-        bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt totam dolorum, ducimus obcaecati, voluptas facilis molestias nobis ut quam natus similique inventore excepturi optio ipsa deleniti fugit illo. Unde, amet! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum illo necessitatibus perspiciatis! Aperiam perferendis labore temporibus, eos culpa corporis recusandae quas, fuga voluptatibus nesciunt odit libero tenetur neque consequatur ea.",
+        bio: "Привет! Меня зовут Николай, и я - опытный fullstack-разработчик. Если вам нужен профессиональный сайт, высококачественное веб-приложение или надежная система управления данными, я готов помочь вам реализовать ваш проект с максимальной эффективностью и качеством.",
       },
       {
         id: uuidv4(),
-        bio: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil vel illum asperiores dignissimos cumque quibusdam et fugiat voluptatem nobis suscipit explicabo, eaque consequatur nesciunt, fugit eligendi corporis laudantium adipisci soluta?",
+        bio: "У вас есть интересный проект для меня? Пишите, обсудим :)"
       },
     ],
     copyrightDate: new Date().getFullYear(),
@@ -604,25 +534,18 @@ export const useMainStore = defineStore("main", {
     contacts: [
       {
         id: 1,
-        name: "address",
-        data: "Россия, г.Волгоград",
-        icon: "fa6-solid:location-dot",
-      },
-      {
-        id: 2,
         name: "email",
         data: "tnrvlg@gmail.com",
         icon: "fa6-solid:envelope",
       },
       {
-        id: 3,
+        id: 2,
         name: "phone",
         data: "+7 996 484 69 19",
         icon: "fa6-solid:phone",
       },
     ],
-    successMessage:
-      "Ваша заявка успешно отправлена, с вами свяжутся через некоторое время",
+    successMessage: "Ваша заявка успешно отправлена, с вами свяжутся через некоторое время",
     failMessage:
       "К сожалению, ваша заявка не была отправлена, попробуйте через несколько минут или свяжитесь по номеру:",
     siteName: "Nuxt.js & Tailwind CSS Portfolio",
@@ -636,7 +559,7 @@ export const useMainStore = defineStore("main", {
       return state.projects.find((project) => project.id == id);
     },
     getCategoryById: (state) => (id) => {
-      return state.categories.filter((category) => category.id === id)[0].name
-    }
+      return state.categories.filter((category) => category.id === id)[0].name;
+    },
   },
 });

@@ -38,7 +38,7 @@ function getFormattedLink(name, data) {
           mb-8
         "
       >
-        Contact details
+        Мои контакты
       </h2>
       <ul class="font-roboto-regular">
         <li class="flex items-start" v-for="contact in store.contacts" :key="contact.id">

@@ -10,9 +10,6 @@ const props = defineProps({
 const store = useMainStore();
 
 const relatedProjects = computed(() => {
-  console.log(
-    store.projects.filter((project) => project.id !== props.currentProjectId)
-  );
   return store.projects.filter((project) => project.id !== props.currentProjectId).slice(0, 4);
 });
 </script>
